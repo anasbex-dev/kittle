@@ -1,0 +1,89 @@
+.kittle-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.kittle-table th,
+.kittle-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.kittle-table th {
+  background: #007bff;
+  color: white;
+}
+
+/* 💎 Model Baru */
+
+/* 🔹 Glassmorphism */
+.kittle-table.glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.kittle-table.glass th,
+.kittle-table.glass td {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* 🔹 Dark Mode */
+.kittle-table.dark {
+  background: #222;
+  color: #ddd;
+}
+
+.kittle-table.dark th {
+  background: #333;
+}
+
+.kittle-table.dark td {
+  border-color: #444;
+}
+
+/* 🔹 Apple Style */
+.kittle-table.apple {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  border-spacing: 0;
+}
+
+.kittle-table.apple th {
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding: 15px;
+}
+
+.kittle-table.apple td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.kittle-table.apple tr:last-child td {
+  border-bottom: none;
+}
+
+/* 🔹 Hover Animation */
+.kittle-table.hover tbody tr:hover {
+  background: rgba(0, 123, 255, 0.1);
+  transition: 0.3s;
+}
+
+/* 🔹 Striped Rows */
+.kittle-table.striped tbody tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.kittle-table.striped.dark tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.05);
+}

@@ -1,0 +1,269 @@
+/* FOOTER GLOBAL */
+.kittle-footer {
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+/* 🔹 1. BASIC FOOTER */
+.kittle-footer.basic {
+  background-color: #333;
+}
+
+/* 🔹 2. MODERN FOOTER */
+.kittle-footer.modern {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+/* 🔹 3. MINIMALIST FOOTER */
+.kittle-footer.minimal {
+  background-color: #222;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* 🔹 4. CYBERPUNK FOOTER */
+.kittle-footer.cyberpunk {
+  background: black;
+  color: #0ff;
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #ff00ff;
+}
+
+/* 🔹 5. DOCS API FOOTER */
+.kittle-footer.docs-api {
+  background: #282c34;
+  color: #61dafb;
+  font-size: 12px;
+}
+
+/* 🔹 6. CURVED FOOTER */
+.kittle-footer.curved {
+  background: #2c3e50;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+/* 🔹 7. GRADIENT FOOTER */
+.kittle-footer.gradient {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+}
+
+/* 🔹 8. TRANSPARENT FOOTER */
+.kittle-footer.transparent {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* 🔹 9. GLASSMORPHISM FOOTER */
+.kittle-footer.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 10. FOOTER WITH ICONS */
+.kittle-footer.icons {
+  background: #212121;
+}
+.kittle-footer.icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+/* 🔹 11. FOOTER WITH SOCIAL MEDIA */
+.kittle-footer.social {
+  background: #333;
+}
+.kittle-footer.social .social-icons a {
+  font-size: 20px;
+  margin: 0 8px;
+}
+
+/* 🔹 12. FOOTER WITH NEWSLETTER */
+.kittle-footer.newsletter {
+  background: #1e1e1e;
+}
+.kittle-footer.newsletter input {
+  padding: 8px;
+  width: 200px;
+  margin-top: 10px;
+}
+
+/* 🔹 13. FOOTER WITH CONTACT INFO */
+.kittle-footer.contact {
+  background: #282828;
+  font-size: 14px;
+}
+
+/* 🔹 14. FOOTER WITH MULTICOLUMN */
+.kittle-footer.multi-column {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: #444;
+}
+.kittle-footer.multi-column div {
+  margin: 10px;
+}
+
+/* 🔹 15. FOOTER WITH COPYRIGHT TEXT */
+.kittle-footer.copyright {
+  background: #222;
+  font-size: 12px;
+}
+
+/* 🔹 16. FOOTER WITH MAP */
+.kittle-footer.map {
+  background: #0a0a0a;
+}
+.kittle-footer.map iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+}
+
+/* 🔹 17. FULLSCREEN FOOTER */
+.kittle-footer.fullscreen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔹 18. FOOTER WITH IMAGE BACKGROUND */
+.kittle-footer.image-bg {
+  background: url('footer-bg.jpg') center/cover;
+}
+
+/* 🔹 19. FOOTER WITH BORDER TOP */
+.kittle-footer.border-top {
+  background: #333;
+  border-top: 3px solid #ff0077;
+}
+
+/* 🔹 20. FOOTER WITH TEXT ANIMATION */
+.kittle-footer.animated-text span {
+  animation: flicker 1.5s infinite alternate;
+}
+@keyframes flicker {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 🔹 21. FOOTER WITH DARK MODE TOGGLE */
+.kittle-footer.dark-mode {
+  background: #1a1a1a;
+}
+.kittle-footer.dark-mode button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* 🔹 22. FOOTER WITH NAVIGATION */
+.kittle-footer.navbar {
+  background: #121212;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 🔹 23. FOOTER WITH LINKS */
+.kittle-footer.links {
+  background: #1f1f1f;
+}
+.kittle-footer.links a {
+  color: #61dafb;
+}
+
+/* 🔹 24. FOOTER WITH BACK TO TOP */
+.kittle-footer.back-to-top {
+  background: #333;
+}
+.kittle-footer.back-to-top button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* 🔹 25. FOOTER WITH FLOATING BUTTON */
+.kittle-footer.floating-btn {
+  background: #444;
+}
+.kittle-footer.floating-btn .btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* 🔹 26. FOOTER WITH TIMELINE */
+.kittle-footer.timeline {
+  background: #222;
+}
+
+/* 🔹 27. FOOTER WITH ICON ROTATION */
+.kittle-footer.rotate-icons a {
+  display: inline-block;
+  animation: rotate 2s infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 🔹 28. FOOTER WITH SLIDE EFFECT */
+.kittle-footer.slide {
+  transform: translateY(100%);
+  transition: transform 0.5s;
+}
+.kittle-footer.slide.active {
+  transform: translateY(0);
+}
+
+/* 🔹 29. FOOTER WITH CHATBOX */
+.kittle-footer.chatbox {
+  background: #121212;
+}
+
+/* 🔹 30. FOOTER WITH WAVE EFFECT */
+.kittle-footer.wave {
+  background: url('wave.svg') no-repeat bottom;
+}
+
+/* 🔹 31. FOOTER WITH DYNAMIC COLORS */
+.kittle-footer.dynamic {
+  background: var(--footer-bg, #333);
+  color: var(--footer-text, white);
+}
+
+/* 🔹 32. FOOTER WITH CUSTOM FONT */
+.kittle-footer.custom-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🔹 33. FOOTER WITH MARQUEE TEXT */
+.kittle-footer.marquee {
+  background: #222;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.kittle-footer.marquee span {
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

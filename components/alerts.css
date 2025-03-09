@@ -1,0 +1,55 @@
+.kittle-alert {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kittle-alert::before {
+  content: "⚠"; /* Icon default */
+  font-size: 18px;
+}
+
+.kittle-alert.success {
+  background: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+
+.kittle-alert.success::before {
+  content: "✔"; /* Icon check */
+}
+
+.kittle-alert.warning {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.kittle-alert.warning::before {
+  content: "⚠"; /* Icon warning */
+}
+
+.kittle-alert.danger {
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+.kittle-alert.danger::before {
+  content: "✖"; /* Icon cross */
+}
+
+.kittle-alert.info {
+  background: rgba(23, 162, 184, 0.2);
+  color: #17a2b8;
+}
+
+.kittle-alert.info::before {
+  content: "ℹ"; /* Icon info */
+}

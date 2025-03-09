@@ -1,0 +1,177 @@
+/* === ROOT VARIABLES === */
+:root {
+  --card-bg: #fff;
+  --card-border-radius: 10px;
+  --card-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  --card-padding: 15px;
+  --card-margin: 10px;
+  --card-max-width: 400px;
+  --text-color: #000;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+}
+
+/* === GENERAL CARD STYLE === */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--card-padding);
+  margin: var(--card-margin);
+  max-width: var(--card-max-width);
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+}
+
+/* === INSTAGRAM CARD === */
+.card-instagram {
+  border: 1px solid var(--secondary-color);
+}
+.card-instagram .card-header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.card-instagram .profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.card-instagram .username {
+  font-weight: bold;
+}
+.card-instagram img {
+  width: 100%;
+  border-radius: 5px;
+}
+.card-instagram .card-footer {
+  padding-top: 10px;
+}
+.card-instagram .icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* === TIKTOK VIDEO CARD === */
+.card-tiktok {
+  background: #000;
+  color: #fff;
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  position: relative;
+}
+.card-tiktok video {
+  width: 100%;
+  border-radius: var(--card-border-radius);
+}
+.card-tiktok .actions {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.card-tiktok .actions button {
+  background: none;
+  border: none;
+  color: #fff;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+/* === YOUTUBE VIDEO CARD === */
+.card-youtube {
+  background: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  border: 1px solid var(--secondary-color);
+}
+.card-youtube img {
+  width: 100%;
+}
+.card-youtube .video-title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: var(--card-padding);
+}
+.card-youtube .video-info {
+  padding: var(--card-padding);
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+/* === LINE CHAT BUBBLE === */
+.card-line {
+  background: #06C755;
+  color: #fff;
+  border-radius: 15px;
+  padding: 10px 15px;
+  max-width: 250px;
+  font-size: 14px;
+}
+.card-line:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #06C755;
+  border-bottom: 0;
+  margin-left: -10px;
+  margin-bottom: -10px;
+}
+
+/* === FACEBOOK CARD === */
+.card-facebook {
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--card-border-radius);
+}
+.card-facebook .header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.card-facebook .profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.card-facebook .username {
+  font-weight: bold;
+}
+.card-facebook img {
+  width: 100%;
+  border-radius: 5px;
+}
+.card-facebook .actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* === WHATSAPP CHAT BUBBLE === */
+.card-whatsapp {
+  background: #25D366;
+  color: #fff;
+  border-radius: 15px;
+  padding: 10px 15px;
+  max-width: 250px;
+  font-size: 14px;
+}
+.card-whatsapp:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #25D366;
+  border-bottom: 0;
+  margin-right: -10px;
+  margin-bottom: -10px;
+}

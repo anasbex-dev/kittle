@@ -1,0 +1,417 @@
+/* Kittle Angker System */
+.kittle-angker {
+  display: inline-block;
+  text-decoration: var(--text-decoration, none);
+  color: var(--color, #007bff);
+  font-size: var(--font-size, 16px);
+  font-weight: var(--font-weight, normal);
+  padding: var(--padding, 8px 12px);
+  margin: var(--margin, 5px);
+  border-radius: var(--rounded, 5px);
+  border: var(--border, none);
+  background: var(--bg-color, transparent);
+  transition: var(--transition, all 0.3s ease);
+}
+
+/* Hover effect */
+.kittle-angker:hover {
+  background: var(--hover-bg-color, rgba(0, 123, 255, 0.1));
+  color: var(--hover-color, #0056b3);
+}
+
+/* Preset Styles */
+
+/* 1. Underline Hover */
+.kittle-angker.underline-hover {
+  --text-decoration: none;
+  position: relative;
+}
+
+.kittle-angker.underline-hover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color, #007bff);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.kittle-angker.underline-hover:hover::after {
+  transform: scaleX(1);
+}
+
+/* 2. Modern Rounded */
+.kittle-angker.rounded {
+  --bg-color: #007bff;
+  --color: white;
+  --rounded: 20px;
+  --padding: 10px 15px;
+}
+
+.kittle-angker.rounded:hover {
+  --hover-bg-color: #0056b3;
+}
+
+/* 3. Cyberpunk */
+.kittle-angker.cyberpunk {
+  --bg-color: black;
+  --color: #ff007f;
+  --border: 2px solid #ff007f;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+}
+
+.kittle-angker.cyberpunk:hover {
+  --hover-bg-color: #ff007f;
+  --hover-color: black;
+}
+
+/* 4. Neumorphism */
+.kittle-angker.neumorphism {
+  --bg-color: #e0e0e0;
+  --color: #333;
+  --border: none;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.1),
+              -6px -6px 10px rgba(255, 255, 255, 0.7);
+}
+
+.kittle-angker.neumorphism:hover {
+  box-shadow: inset 6px 6px 10px rgba(0, 0, 0, 0.1),
+              inset -6px -6px 10px rgba(255, 255, 255, 0.7);
+}
+
+/* 5. Glowing Effect */
+.kittle-angker.glow {
+  --color: white;
+  --bg-color: #222;
+  --border: 1px solid white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.kittle-angker.glow:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+}
+
+/* 6. Dark Mode */
+.kittle-angker.dark {
+  --bg-color: #222;
+  --color: #fff;
+  --border: 1px solid #444;
+}
+
+.kittle-angker.dark:hover {
+  --hover-bg-color: #333;
+}
+
+/* 7. Gradient Hover */
+.kittle-angker.gradient-hover {
+  --color: white;
+  --bg-color: linear-gradient(45deg, #ff8a00, #e52e71);
+  --padding: 10px 20px;
+  --border-radius: 30px;
+}
+
+.kittle-angker.gradient-hover:hover {
+  --bg-color: linear-gradient(45deg, #e52e71, #ff8a00);
+}
+
+/* 8. Outline Button */
+.kittle-angker.outline {
+  --bg-color: transparent;
+  --border: 2px solid #007bff;
+  --color: #007bff;
+}
+
+.kittle-angker.outline:hover {
+  --bg-color: #007bff;
+  --color: white;
+}
+
+/* 9. Glassmorphism */
+.kittle-angker.glass {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.kittle-angker.glass:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 10. Bouncing Effect */
+.kittle-angker.bounce {
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+/* 11. Skewed Link */
+.kittle-angker.skewed {
+  transform: skew(-20deg);
+  padding: 10px 25px;
+  background: #007bff;
+  color: white;
+}
+
+.kittle-angker.skewed:hover {
+  background: #0056b3;
+}
+
+/* 12. 3D Button Press */
+.kittle-angker.press {
+  background: #ff5722;
+  color: white;
+  box-shadow: 0 5px #d84315;
+}
+
+.kittle-angker.press:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+/* 13. Neon Glow (Cyberpunk Style) */
+.kittle-angker.neon {
+  --color: #0ff;
+  --bg-color: black;
+  --border: 2px solid #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+.kittle-angker.neon:hover {
+  --color: black;
+  --bg-color: #0ff;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+/* 14. Retro Pixel Button */
+.kittle-angker.pixel {
+  font-family: "Press Start 2P", cursive;
+  font-size: 14px;
+  padding: 12px 15px;
+  border: 4px solid black;
+  background: yellow;
+  color: black;
+}
+
+.kittle-angker.pixel:hover {
+  background: orange;
+}
+
+/* 15. Cartoon Bubble Effect */
+.kittle-angker.bubble {
+  --color: white;
+  --bg-color: #ff4081;
+  --border-radius: 30px;
+  --padding: 12px 25px;
+  box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.3),
+              inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.kittle-angker.bubble:hover {
+  --bg-color: #f50057;
+}
+
+/* 16. Futuristic Sci-Fi Button */
+.kittle-angker.sci-fi {
+  background: linear-gradient(45deg, #001f3f, #0074D9);
+  color: white;
+  text-transform: uppercase;
+  border: 2px solid cyan;
+  padding: 12px 30px;
+  border-radius: 50px;
+  box-shadow: 0 0 15px cyan;
+}
+
+.kittle-angker.sci-fi:hover {
+  background: linear-gradient(45deg, #0074D9, #001f3f);
+  box-shadow: 0 0 30px cyan;
+}
+
+/* 17. Fire Button */
+.kittle-angker.fire {
+  background: linear-gradient(45deg, #ff4500, #ff8c00);
+  color: white;
+  animation: fireGlow 1s infinite alternate;
+}
+
+@keyframes fireGlow {
+  0% { box-shadow: 0 0 5px #ff4500; }
+  100% { box-shadow: 0 0 15px #ff8c00; }
+}
+
+/* 18. Wave Hover Effect */
+.kittle-angker.wave {
+  position: relative;
+  overflow: hidden;
+  background: #1e90ff;
+  color: white;
+  border-radius: 5px;
+  padding: 12px 25px;
+}
+
+.kittle-angker.wave::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: 50%;
+  left: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 60%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease-out;
+}
+
+.kittle-angker.wave:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 19. Rainbow Gradient Animation */
+.kittle-angker.rainbow {
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 400%;
+  animation: rainbow 3s infinite alternate;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* 20. Ghost Button (Transparan) */
+.kittle-angker.ghost {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 25px;
+  border-radius: 5px;
+}
+
+.kittle-angker.ghost:hover {
+  background: white;
+  color: black;
+}
+
+/* 21. Hologram Effect */
+.kittle-angker.hologram {
+  background: linear-gradient(45deg, #00f, #0ff, #f0f, #ff0);
+  background-size: 300% 300%;
+  animation: hologramAnim 3s infinite alternate;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  border: 2px solid white;
+}
+
+@keyframes hologramAnim {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* 22. Glitch Effect */
+.kittle-angker.glitch {
+  background: black;
+  color: white;
+  padding: 12px 25px;
+  border: 2px solid red;
+  text-shadow: 3px 0 red, -3px 0 cyan;
+  position: relative;
+}
+
+.kittle-angker.glitch:hover {
+  animation: glitchAnim 0.2s infinite;
+}
+
+@keyframes glitchAnim {
+  0% { transform: translate(2px, -2px); text-shadow: 2px 0 red, -2px 0 cyan; }
+  50% { transform: translate(-2px, 2px); text-shadow: -2px 0 red, 2px 0 cyan; }
+  100% { transform: translate(2px, -2px); text-shadow: 2px 0 red, -2px 0 cyan; }
+}
+
+/* 23. Metallic Button */
+.kittle-angker.metal {
+  background: linear-gradient(45deg, #555, #ccc, #555);
+  color: black;
+  border: 2px solid #444;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.kittle-angker.metal:hover {
+  background: linear-gradient(45deg, #777, #ddd, #777);
+}
+
+/* 24. Embossed Button */
+.kittle-angker.emboss {
+  background: #ddd;
+  color: black;
+  border-radius: 5px;
+  padding: 12px 25px;
+  box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.3),
+              inset -3px -3px 5px rgba(255, 255, 255, 0.3);
+}
+
+.kittle-angker.emboss:hover {
+  background: #bbb;
+}
+
+/* 25. Glass Morphism */
+.kittle-angker.glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 12px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+.kittle-angker.glass:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 26. Jelly Button */
+.kittle-angker.jelly {
+  background: #ff4500;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.kittle-angker.jelly:hover {
+  transform: scale(1.1);
+}
+
+/* 27. Shake Button */
+.kittle-angker.shake {
+  background: #ff0;
+  color: black;
+  padding: 12px 25px;
+  border-radius: 5px;
+  transition: transform 0.1s ease;
+}
+
+.kittle-angker.shake:hover {
+  animation: shakeAnim 0.2s infinite;
+}
+
+@keyframes shakeAnim {
+  0% { transform: translateX(2px); }
+  50% { transform: translateX(-2px); }
+  100% { transform: translateX(2px); }
+}

@@ -1,0 +1,74 @@
+/* Kittle Layout System */
+
+.kittle-layout {
+  color: var(--color, black);
+  display: var(--display, flex);
+  flex-direction: var(--direction, column);
+  justify-content: var(--justify, flex-start);
+  align-items: var(--align, flex-start);
+  padding: var(--padding, 10px);
+  margin: var(--margin, 10px);
+  border-radius: var(--rounded, 8px);
+  border: var(--line, none);
+  background: var(--bg-color, white);
+  text-align: var(--text-align, left);
+  width: var(--width, auto);
+  height: var(--height, auto);
+  max-width: var(--max-width, 100%);
+  max-height: var(--max-height, auto);
+  min-width: var(--min-width, 0);
+  min-height: var(--min-height, 0);
+  box-shadow: var(--shadow, none);
+  overflow: var(--overflow, visible);
+  gap: var(--gap, 0);
+  position: var(--position, relative);
+  z-index: var(--z-index, auto);
+  transition: var(--transition, all 0.3s ease);
+}
+
+/* Preset layout */
+
+.kittle-layout.card {
+  --bg-color: white;
+  --padding: 20px;
+  --rounded: 12px;
+  --shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.kittle-layout.container {
+  --width: 90%;
+  --max-width: 1200px;
+  --margin: auto;
+  --padding: 20px;
+}
+
+.kittle-layout.scroll {
+  --overflow: auto;
+  --max-height: 300px;
+}
+
+.kittle-layout.center {
+  --display: flex;
+  --justify: center;
+  --align: center;
+}
+
+.kittle-layout.dark-mode {
+  --bg-color: #222;
+  --text-color: white;
+}
+
+.kittle-layout.neumorphism {
+  --bg-color: #e0e0e0;
+  --shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+             -8px -8px 15px rgba(255, 255, 255, 1);
+}
+
+/* Responsif */
+
+@media (max-width: 768px) {
+  .kittle-layout {
+    --padding: 15px;
+    --margin: 5px;
+  }
+}

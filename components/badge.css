@@ -1,0 +1,42 @@
+.kittle-badge {
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.kittle-badge.primary { background: #007bff; color: white; }
+.kittle-badge.secondary { background: #6c757d; color: white; }
+.kittle-badge.success { background: #28a745; color: white; }
+.kittle-badge.warning { background: #ffc107; color: black; }
+.kittle-badge.danger { background: #dc3545; color: white; }
+
+/* 💎 Model Baru */
+
+/* 🔹 Blur Effect */
+.kittle-badge.blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Outline */
+.kittle-badge.outline {
+  background: transparent;
+  border: 2px solid;
+}
+
+.kittle-badge.primary.outline { color: #007bff; border-color: #007bff; }
+.kittle-badge.secondary.outline { color: #6c757d; border-color: #6c757d; }
+.kittle-badge.success.outline { color: #28a745; border-color: #28a745; }
+.kittle-badge.warning.outline { color: #ffc107; border-color: #ffc107; }
+.kittle-badge.danger.outline { color: #dc3545; border-color: #dc3545; }
+
+/* 🔹 Soft Mode */
+.kittle-badge.soft {
+  background: rgba(255, 255, 255, 0.2);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}

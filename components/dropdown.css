@@ -1,0 +1,144 @@
+.kittle-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Default Dropdown */
+.kittle-dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 180px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Default dropdown item */
+.kittle-dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+.kittle-dropdown-content a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Animasi Fade In */
+.fade-in {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.kittle-dropdown:hover .fade-in {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animasi Slide Down */
+.slide-down {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.kittle-dropdown:hover .slide-down {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animasi Zoom In */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.8);
+}
+.kittle-dropdown:hover .zoom-in {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Animasi Rotate In */
+.rotate-in {
+  opacity: 0;
+  transform: rotateX(-90deg);
+}
+.kittle-dropdown:hover .rotate-in {
+  display: block;
+  opacity: 1;
+  transform: rotateX(0);
+}
+
+/* ========== 1. Modern Minimalis ========== */
+.minimalist {
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+.minimalist a {
+  color: #333;
+  font-weight: bold;
+}
+.minimalist a:hover {
+  background: #f0f0f0;
+}
+
+/* ========== 2. Cute / Lucu ========== */
+.cute {
+  background: pink;
+  box-shadow: 0 4px 6px rgba(255, 182, 193, 0.5);
+  border: 2px solid #ff69b4;
+}
+.cute a {
+  color: white;
+  font-weight: bold;
+}
+.cute a:hover {
+  background: #ffb6c1;
+}
+
+/* ========== 3. Cyber / Futuristik ========== */
+.cyber {
+  background: black;
+  border: 2px solid cyan;
+  box-shadow: 0 0 10px cyan;
+}
+.cyber a {
+  color: cyan;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.cyber a:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+/* ========== 4. Glassmorphism ========== */
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+.glass a {
+  color: white;
+}
+.glass a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========== 5. Neumorphism ========== */
+.neumorphism {
+  background: #e0e0e0;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+              -8px -8px 15px rgba(255, 255, 255, 1);
+  border-radius: 12px;
+}
+.neumorphism a {
+  color: #333;
+}
+.neumorphism a:hover {
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1),
+              inset -4px -4px 10px rgba(255, 255, 255, 1);
+}

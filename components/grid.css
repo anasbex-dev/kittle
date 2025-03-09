@@ -1,0 +1,329 @@
+/* 🎯 BASE GRID SYSTEM */
+.kittle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--kittle-grid-gap, 10px);
+  justify-content: var(--kittle-grid-justify, flex-start);
+  align-items: var(--kittle-grid-align, stretch);
+}
+
+.kittle-col {
+  padding: var(--kittle-grid-padding, 10px);
+  flex: 1;
+  min-width: 100px;
+}
+
+/* 📏 Grid Preset */
+.kittle-col-12 { width: 100%; }
+.kittle-col-10 { width: 83.33%; }
+.kittle-col-9  { width: 75%; }
+.kittle-col-8  { width: 66.66%; }
+.kittle-col-6  { width: 50%; }
+.kittle-col-4  { width: 33.33%; }
+.kittle-col-3  { width: 25%; }
+.kittle-col-2  { width: 16.66%; }
+.kittle-col-1  { width: 8.33%; }
+
+/* 🔹 1. RESPONSIVE GRID */
+@media (max-width: 768px) {
+  .kittle-col { width: 100%; }
+}
+
+/* 🔹 2. EQUAL HEIGHT GRID */
+.kittle-row.equal-height {
+  align-items: stretch;
+}
+
+/* 🔹 3. MASONRY GRID (Pinterest-Style) */
+.kittle-grid-masonry {
+  column-count: var(--kittle-grid-columns, 3);
+  column-gap: var(--kittle-grid-gap, 10px);
+}
+
+.kittle-grid-masonry .kittle-col {
+  display: inline-block;
+  width: 100%;
+}
+
+/* 🔹 4. OVERLAPPING GRID */
+.kittle-grid-overlap .kittle-col {
+  position: relative;
+}
+
+.kittle-grid-overlap .kittle-col:nth-child(even) {
+  margin-top: -20px;
+}
+
+/* 🔹 5. JUSTIFIED GRID */
+.kittle-row.justified {
+  justify-content: space-between;
+}
+
+/* 🔹 6. STAGGERED GRID */
+.kittle-grid-staggered .kittle-col:nth-child(even) {
+  margin-top: 20px;
+}
+
+/* 🔹 7. CENTERED GRID */
+.kittle-row.centered {
+  justify-content: center;
+}
+
+/* 🔹 8. FLEXIBLE AUTO GRID */
+.kittle-row.flex-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+/* 🔹 9. ASYMMETRICAL GRID */
+.kittle-grid-asym .kittle-col:first-child {
+  width: 60%;
+}
+.kittle-grid-asym .kittle-col:last-child {
+  width: 40%;
+}
+
+/* 🔹 10. BORDERED GRID */
+.kittle-grid-bordered .kittle-col {
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+/* 🔹 11. GRID HOVER EFFECT */
+.kittle-grid-hover .kittle-col:hover {
+  background: #007bff;
+  color: white;
+  transition: 0.3s;
+}
+
+/* 🔹 12. GRID ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.kittle-grid-animate .kittle-col {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 🔹 13. SPLIT GRID */
+.kittle-grid-split {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+/* 🔹 14. SIDEBAR GRID */
+.kittle-grid-sidebar {
+  display: grid;
+  grid-template-columns: 250px auto;
+}
+
+/* 🔹 15. CONTENT + SIDEBAR GRID */
+.kittle-grid-content-sidebar {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+/* 🔹 16. GRID PARALLAX */
+.kittle-grid-parallax .kittle-col {
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* 🔹 17. NESTED GRID */
+.kittle-grid-nested .kittle-col {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 🔹 18. AUTO-FIT & AUTO-FILL GRID */
+.kittle-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+/* 🔹 19. BACKGROUND ALTERNATING */
+.kittle-grid-alt .kittle-col:nth-child(even) {
+  background: #f8f8f8;
+}
+
+/* 🔹 20. GRADIENT GRID STYLE */
+.kittle-grid-gradient .kittle-col {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  color: white;
+}
+
+/* 🔹 21. ROTATING GRID ANIMATION */
+@keyframes rotateGrid {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(5deg); }
+}
+.kittle-grid-rotate:hover .kittle-col {
+  animation: rotateGrid 0.3s ease-in-out;
+}
+
+/* 🔹 22. SKEWED GRID */
+.kittle-grid-skew .kittle-col {
+  transform: skewX(-10deg);
+}
+
+/* 🔹 23. ANIMATED REVEAL GRID */
+.kittle-grid-reveal .kittle-col {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+.kittle-grid-reveal:hover .kittle-col {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🔹 24. BLURRED BACKGROUND GRID */
+.kittle-grid-blur .kittle-col {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* 🔹 25. GLASSMORPHISM GRID */
+.kittle-grid-glass .kittle-col {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 🔹 26. DARK MODE GRID */
+.kittle-grid-dark {
+  background: #222;
+  color: white;
+}
+.kittle-grid-dark .kittle-col {
+  border: 1px solid #444;
+}
+
+/* 🔹 27. INTERACTIVE GRID */
+.kittle-grid-interactive .kittle-col {
+  transition: all 0.3s;
+}
+.kittle-grid-interactive .kittle-col:hover {
+  transform: scale(1.1);
+  background: #007bff;
+  color: white;
+}
+
+/* 🏗️ Dynamic Grid Layout */
+.kittle-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--kittle-grid-gap, 10px);
+}
+
+/* 🌈 Colorful Grid (Random Background) */
+.kittle-grid-colorful .kittle-col:nth-child(odd) {
+  background: #ffcc00;
+}
+.kittle-grid-colorful .kittle-col:nth-child(even) {
+  background: #ff5733;
+}
+
+/* 🌙 Theme Mode (Dark & Light) */
+.kittle-grid-light {
+  background: #fff;
+  color: black;
+}
+.kittle-grid-dark {
+  background: #222;
+  color: white;
+}
+
+/* 🎭 Animated Grid */
+.kittle-grid-fade .kittle-col {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.kittle-grid-fade .kittle-col.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌀 Hover Effect */
+.kittle-grid-hover .kittle-col:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔄 Slide Animation */
+.kittle-grid-slide .kittle-col {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.kittle-grid-slide .kittle-col.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* 🎮 Interactive Grid (Drag & Resize) */
+.kittle-grid-draggable .kittle-col {
+  cursor: grab;
+  user-select: none;
+}
+.kittle-grid-draggable .kittle-col:active {
+  cursor: grabbing;
+}
+
+/* 📐 Grid Generator (Customizable with Variables) */
+.kittle-grid-custom {
+  display: grid;
+  grid-template-columns: repeat(var(--kittle-grid-columns, 3), 1fr);
+  gap: var(--kittle-grid-gap, 10px);
+}
+
+/* 💎 3D Grid */
+.kittle-grid-3d .kittle-col {
+  transform: rotateX(10deg);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 🎭 Multi-Layer Grid */
+.kittle-grid-layered {
+  position: relative;
+}
+.kittle-grid-layered .kittle-col {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+/* 🚀 Lazy Load Grid */
+.kittle-grid-lazy img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.kittle-grid-lazy img.loaded {
+  opacity: 1;
+}
+
+/* 📲 Smart Responsive Grid */
+@media (max-width: 600px) {
+  .kittle-col {
+    width: 100% !important;
+  }
+}
+
+/* 🌟 27 MODELS GRID */
+.kittle-grid-1 { grid-template-columns: repeat(1, 1fr); }
+.kittle-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.kittle-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.kittle-grid-4 { grid-template-columns: repeat(4, 1fr); }
+.kittle-grid-5 { grid-template-columns: repeat(5, 1fr); }
+.kittle-grid-6 { grid-template-columns: repeat(6, 1fr); }
+.kittle-grid-7 { grid-template-columns: repeat(7, 1fr); }
+.kittle-grid-8 { grid-template-columns: repeat(8, 1fr); }
+.kittle-grid-9 { grid-template-columns: repeat(9, 1fr); }
+.kittle-grid-10 { grid-template-columns: repeat(10, 1fr); }
+.kittle-grid-11 { grid-template-columns: repeat(11, 1fr); }
+.kittle-grid-12 { grid-template-columns: repeat(12, 1fr); }

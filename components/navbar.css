@@ -1,0 +1,272 @@
+.kittle-navbar {
+  background-color: #333;
+  color: var(--color, black);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.kittle-navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  transition: 0.3s;
+}
+
+.kittle-navbar a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* 📌 1. API DOCUMENTATION NAVBAR */
+.kittle-navbar.api-docs {
+  background: var(--background, white);
+  font-family: monospace;
+  border-bottom: var(--border-bottom, 3px solid #007bff);
+}
+
+.kittle-navbar.api-docs .brand {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.kittle-navbar.api-docs a {
+  color: var(--color, black);
+  font-size: 14px;
+}
+
+/* 📌 2. COMPANY NAVBAR */
+.kittle-navbar.company {
+  background: linear-gradient(45deg, #1a1a1a, #333);
+  font-family: Arial, sans-serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 📌 3. GLASSMORPHISM NAVBAR */
+.kittle-navbar.glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+/* 📌 4. MINIMALIST NAVBAR */
+.kittle-navbar.minimal {
+  background: none;
+  border-bottom: 2px solid #ddd;
+}
+
+.kittle-navbar.minimal a {
+  color: black;
+}
+
+/* 📌 5. FULLSCREEN NAVBAR */
+.kittle-navbar.fullscreen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.kittle-navbar.fullscreen a {
+  font-size: 24px;
+}
+
+/* 📌 6. NAVBAR WITH SEARCH */
+.kittle-navbar.search {
+  display: flex;
+}
+
+.kittle-navbar.search input {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 📌 7. NAVBAR WITH BUTTON */
+.kittle-navbar.button {
+  display: flex;
+}
+
+.kittle-navbar.button .btn {
+  background: #007bff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 📌 8. DARK MODE TOGGLE */
+.kittle-navbar.dark-mode {
+  background: #222;
+  color: white;
+}
+
+.kittle-navbar.dark-mode .toggle-btn {
+  background: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* 📌 9. BORDERED NAVBAR */
+.kittle-navbar.bordered {
+  border: 2px solid #fff;
+}
+
+/* 📌 10. NAVBAR WITH LOGO */
+.kittle-navbar.logo {
+  display: flex;
+}
+
+.kittle-navbar.logo img {
+  height: 40px;
+}
+
+/* 📌 11. TRANSPARENT NAVBAR */
+.kittle-navbar.transparent {
+  background: transparent;
+  position: absolute;
+}
+
+/* 📌 12. NAVBAR WITH ICONS */
+.kittle-navbar.icons a {
+  display: flex;
+  align-items: center;
+}
+
+.kittle-navbar.icons a i {
+  margin-right: 5px;
+}
+
+/* 📌 13. HOVER UNDERLINE EFFECT */
+.kittle-navbar.underline a {
+  position: relative;
+}
+
+.kittle-navbar.underline a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s;
+}
+
+.kittle-navbar.underline a:hover::after {
+  width: 100%;
+}
+
+/* 📌 14. FIXED NAVBAR */
+.kittle-navbar.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* 📌 15. NAVBAR WITH GRADIENT */
+.kittle-navbar.gradient {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+}
+
+/* 📌 16. NAVBAR WITH DROP SHADOW */
+.kittle-navbar.shadow {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 📌 17. NAVBAR WITH SLIDE EFFECT */
+.kittle-navbar.slide {
+  transition: transform 0.5s ease-in-out;
+}
+
+.kittle-navbar.slide.hidden {
+  transform: translateY(-100%);
+}
+
+/* 📌 18. NAVBAR WITH FADE EFFECT */
+.kittle-navbar.fade {
+  transition: opacity 0.5s;
+}
+
+.kittle-navbar.fade.hidden {
+  opacity: 0;
+}
+
+/* 📌 19. NAVBAR WITH TABS */
+.kittle-navbar.tabs {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+}
+
+.kittle-navbar.tabs a.active {
+  border-bottom: 2px solid #007bff;
+}
+
+/* 📌 20. NAVBAR WITH DROPDOWN */
+.kittle-navbar.dropdown {
+  position: relative;
+}
+
+.kittle-navbar.dropdown .dropdown-menu {
+  position: absolute;
+  top: 40px;
+  background: white;
+  display: none;
+}
+
+.kittle-navbar.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* 📌 21. NAVBAR WITH CURVED EDGES */
+.kittle-navbar.curved {
+  border-radius: 50px;
+}
+
+/* 📌 22. NAVBAR WITH PILL-SHAPED LINKS */
+.kittle-navbar.pill a {
+  border-radius: 20px;
+  background: #007bff;
+}
+
+/* 📌 23. NAVBAR WITH LEFT ALIGN */
+.kittle-navbar.left-align {
+  justify-content: flex-start;
+}
+
+/* 📌 24. NAVBAR WITH RIGHT ALIGN */
+.kittle-navbar.right-align {
+  justify-content: flex-end;
+}
+
+/* 📌 25. NAVBAR WITH ANIMATION */
+@keyframes navBounce {
+  0% { transform: translateY(-10px); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+.kittle-navbar.animated {
+  animation: navBounce 1s infinite alternate;
+}
+
+/* 📌 26. NAVBAR WITH SCALE EFFECT */
+.kittle-navbar.scale a {
+  transition: transform 0.3s;
+}
+
+.kittle-navbar.scale a:hover {
+  transform: scale(1.1);
+}
+
+/* 📌 27. NAVBAR WITH ROTATE EFFECT */
+.kittle-navbar.rotate a {
+  transition: transform 0.3s;
+}
+
+.kittle-navbar.rotate a:hover {
+  transform: rotate(5deg);
+}

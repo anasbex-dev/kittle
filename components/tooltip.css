@@ -1,0 +1,71 @@
+.kittle-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.kittle-tooltip .tooltip-text {
+  visibility: hidden;
+  width: 140px;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.kittle-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 💎 Model Baru */
+
+/* 🔹 Glassmorphism */
+.kittle-tooltip.glass .tooltip-text {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* 🔹 Dark Mode */
+.kittle-tooltip.dark .tooltip-text {
+  background: #222;
+  color: #ddd;
+}
+
+/* 🔹 Modern Soft Shadow */
+.kittle-tooltip.soft-shadow .tooltip-text {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔹 Arrowed Tooltip */
+.kittle-tooltip.arrow .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.kittle-tooltip.dark.arrow .tooltip-text::after {
+  border-color: #222 transparent transparent transparent;
+}
+
+/* 🔹 Hover Animation */
+.kittle-tooltip.animated:hover .tooltip-text {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
