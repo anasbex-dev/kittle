@@ -1,0 +1,69 @@
+/* kittle.img.css - Modul untuk elemen <img> */
+
+/* Variabel utama */
+:root {
+  --kt-img-width: auto;
+  --kt-img-height: auto;
+  --kt-img-max-width: 100%;
+  --kt-img-border-radius: 0px;
+  --kt-img-border: none;
+  --kt-img-shadow: none;
+  --kt-img-hover-shadow: none;
+  --kt-img-hover-scale: 1;
+  --kt-img-hover-opacity: 1;
+  --kt-img-hover-filter: none;
+  --kt-img-transition: 0.3s ease-in-out;
+}
+
+/* Style dasar */
+.kittle-img {
+  display: block;
+  width: var(--kt-img-width);
+  height: var(--kt-img-height);
+  max-width: var(--kt-img-max-width);
+  border-radius: var(--kt-img-border-radius);
+  border: var(--kt-img-border);
+  box-shadow: var(--kt-img-shadow);
+  transition: all var(--kt-img-transition);
+}
+
+/* Hover effect */
+.kittle-img:hover {
+  box-shadow: var(--kt-img-hover-shadow);
+  transform: scale(var(--kt-img-hover-scale));
+  opacity: var(--kt-img-hover-opacity);
+  filter: var(--kt-img-hover-filter);
+}
+
+/* Variasi Border */
+.kittle-img.rounded {
+  --kt-img-border-radius: 50%;
+}
+
+.kittle-img.shadow {
+  --kt-img-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  --kt-img-hover-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Efek Hover Custom */
+.kittle-img.blur-hover {
+  --kt-img-hover-filter: blur(5px);
+}
+
+.kittle-img.grayscale-hover {
+  --kt-img-hover-filter: grayscale(100%);
+}
+
+.kittle-img.opacity-hover {
+  --kt-img-hover-opacity: 0.7;
+}
+
+/* Animasi Fade */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.kittle-img.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}

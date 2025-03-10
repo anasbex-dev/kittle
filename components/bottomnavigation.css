@@ -1,7 +1,9 @@
+@import url('../var/kittle.var.css');
 :root {
+  --index: 1000;
   --kittle-brand-color: #A42BC8;
   --kittle-nav-bg: #fff;
-  --kittle-nav-active-color: var(--kittle-brand-color);
+  --kittle-active-color: var(--kittle-brand-color);
   --kittle-nav-text-color: #333;
   --kittle-nav-icon-size: 24px;
   --kittle-nav-padding: 10px;
@@ -12,12 +14,13 @@
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: var(--index);
   width: 100%;
   display: flex;
   justify-content: space-around;
   background: var(--kittle-nav-bg);
   padding: var(--kittle-nav-padding);
-  border-top: 2px solid var(--kittle-brand-color);
+  border-top: 2px solid var(--primary-color);
   box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,7 +41,7 @@
 }
 
 .kittle-nav-item.active {
-  color: var(--kittle-nav-active-color);
+  color: var(--primary-color);
 }
 
 /* Animasi Transisi */

@@ -1,6 +1,8 @@
+@import url('../var/kittle.var.css');
 :root {
+  --index: 1000;
   --kittle-tab-color: #333;
-  --kittle-tab-active-color: #A42BC8;
+  --kittle-active-color: var(--primary-color);
   --kittle-tab-bg: #f9f9f9;
   --kittle-tab-border: 2px solid #ddd;
   --kittle-tab-padding: 10px 20px;
@@ -8,6 +10,7 @@
 }
 
 .kittle-tab-container {
+  z-index: var(--index);
   display: flex;
   border-bottom: var(--kittle-tab-border);
   background: var(--kittle-tab-bg);
@@ -24,9 +27,9 @@
 }
 
 .kittle-tab.active {
-  border-bottom: 3px solid var(--kittle-tab-active-color);
+  border-bottom: 3px solid var(--kittle-active-color);
   font-weight: bold;
-  color: var(--kittle-tab-active-color);
+  color: var(--kittle-active-color);
 }
 
 .kittle-tab-content {

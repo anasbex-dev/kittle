@@ -1,5 +1,8 @@
 /* === Copyright ©2025 - AnasBex/Anazu Kittle V1 === */
 
+/* === VARIABEL === */
+@import url('var/kittle.var.css');
+
 /* -- COMPONENTS -- */
 @import url('animation_style.css');
 @import url('components/buttons.css');
@@ -23,6 +26,7 @@
 /* -- KITTLE MODULE -- */
 @import url('module/kittle.module.css');
 @import url('module/kittle.text.css');
+@import url('module/kittle.img.css');
 
 /* -- KITTLE FONTS -- */
 
