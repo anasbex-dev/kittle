@@ -12,6 +12,7 @@ function loadScript(src) {
 Promise.all([
     loadScript("kittle.config.js"),
     loadScript("promise-js/toggle.js")
+    
 ]).then(messages => {
     console.log("Semua script berhasil dimuat:");
     console.log(messages);

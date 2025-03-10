@@ -1,0 +1,69 @@
+/* kittle.text.css - Modul untuk elemen <a> */
+
+/* Variabel utama */
+:root {
+  --kt-text-font: 'Arial', sans-serif;
+  --kt-text-size: 16px;
+  --kt-text-weight: 400;
+  --kt-text-padding: 8px 12px;
+  --kt-text-margin: 4px;
+  --kt-text-width: auto;
+  --kt-text-height: auto;
+  --kt-text-bg: transparent;
+  --kt-text-color: #A42BC8;
+  --kt-text-decoration: none;
+  --kt-text-hover-bg: #A42BC8;
+  --kt-text-hover-color: #fff;
+  --kt-text-hover-decoration: underline;
+  --kt-text-transition: 0.3s ease-in-out;
+}
+
+/* Style dasar */
+.kittle-text {
+  display: inline-block;
+  font-family: var(--kt-text-font);
+  font-size: var(--kt-text-size);
+  font-weight: var(--kt-text-weight);
+  padding: var(--kt-text-padding);
+  margin: var(--kt-text-margin);
+  width: var(--kt-text-width);
+  height: var(--kt-text-height);
+  background: var(--kt-text-bg);
+  color: var(--kt-text-color);
+  text-decoration: var(--kt-text-decoration);
+  transition: all var(--kt-text-transition);
+}
+
+/* Hover effect */
+.kittle-text:hover {
+  background: var(--kt-text-hover-bg);
+  color: var(--kt-text-hover-color);
+  text-decoration: var(--kt-text-hover-decoration);
+}
+
+/* Animasi tambahan */
+@keyframes underline-grow {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Efek hover underline animasi */
+.kittle-text.underline-hover {
+  position: relative;
+  text-decoration: none;
+}
+
+.kittle-text.underline-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--kt-text-hover-color);
+  transition: width var(--kt-text-transition);
+}
+
+.kittle-text.underline-hover:hover::after {
+  width: 100%;
+}

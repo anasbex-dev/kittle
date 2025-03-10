@@ -45,7 +45,7 @@ Jika kamu ingin berkontribusi:
 3. **Commit** perubahan kamu  
 4. Buat **Pull Request**  
 
-Sata akan dengan senang hati meninjau dan menggabungkan kontribusi yang sesuai. Ayo bersama-sama mengembangkan Kittle menjadi framework yang lebih baik!  
+Saya akan dengan senang hati meninjau dan menggabungkan kontribusi yang sesuai. Ayo bersama-sama mengembangkan Kittle menjadi framework yang lebih baik!  
 
 ## 📄 Lisensi  
 

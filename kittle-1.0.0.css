@@ -17,9 +17,12 @@
 @import url('components/angker.css');
 @import url('components/footer.css');
 @import url('components/card-social.css');
+@import url('components/tablayout.css');
+@import url('components/bottomnavigation.css');
 
 /* -- KITTLE MODULE -- */
 @import url('module/kittle.module.css');
+@import url('module/kittle.text.css');
 
 /* -- KITTLE FONTS -- */
 

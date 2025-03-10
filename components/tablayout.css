@@ -1,0 +1,59 @@
+:root {
+  --kittle-tab-color: #333;
+  --kittle-tab-active-color: #A42BC8;
+  --kittle-tab-bg: #f9f9f9;
+  --kittle-tab-border: 2px solid #ddd;
+  --kittle-tab-padding: 10px 20px;
+  --kittle-tab-transition: slide; /* Bisa: fade, slide, scale */
+}
+
+.kittle-tab-container {
+  display: flex;
+  border-bottom: var(--kittle-tab-border);
+  background: var(--kittle-tab-bg);
+}
+
+.kittle-tab {
+  padding: var(--kittle-tab-padding);
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 16px;
+  color: var(--kittle-tab-color);
+  transition: 0.3s;
+}
+
+.kittle-tab.active {
+  border-bottom: 3px solid var(--kittle-tab-active-color);
+  font-weight: bold;
+  color: var(--kittle-tab-active-color);
+}
+
+.kittle-tab-content {
+  display: none;
+  padding: 15px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Animasi Transisi */
+.kittle-tab-content.fade {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.kittle-tab-content.slide {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.kittle-tab-content.scale {
+  transform: scale(0.8);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.kittle-tab-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}

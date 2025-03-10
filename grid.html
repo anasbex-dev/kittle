@@ -9,22 +9,65 @@
 </head>
 
 <body>
-    <!-- 🔹 1. API DOCUMENTATION NAVBAR -->
-    <nav class="kittle-navbar api-docs" style="--background: white;">
-        <div class="brand">API Docs</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Docs</a>
-            <a href="#">Support</a>
-        </div>
-    </nav>
-    
+<!-- Atur transisi menggunakan variabel CSS -->
+<style>
+  :root {
+    --kittle-nav-transition: slide-up; /* Bisa: fade, slide-up, scale */
+  }
+</style>
 
-    <!-- Footer -->
-    <footer class="kittle-footer links">
-      <a href="#">Documenter</a> <a href="#">Api</a>
-        <p>© 2025 AnasBex. All rights reserved.</p>
-    </footer>
+<div class="kittle-bottom-nav">
+  <div class="kittle-nav-item active" data-tab="home">
+    <i class="fas fa-home"></i>
+    <span>Home</span>
+  </div>
+  <div class="kittle-nav-item" data-tab="search">
+    <i class="fas fa-search"></i>
+    <span>Search</span>
+  </div>
+  <div class="kittle-nav-item" data-tab="profile">
+    <i class="fas fa-user"></i>
+    <span>Profile</span>
+  </div>
+</div>
+
+<div class="kittle-nav-content active fade">
+  <p>Konten Home</p>
+</div>
+<div class="kittle-nav-content fade">
+  <p>Konten Search</p>
+</div>
+<div class="kittle-nav-content fade">
+  <p>Konten Profile</p>
+</div>
+
+<a href="#" class="kittle-text">Link Biasa</a>
+<a href="#" class="kittle-text underline-hover">Link dengan Efek Underline</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const navItems = document.querySelectorAll(".kittle-nav-item");
+  const contents = document.querySelectorAll(".kittle-nav-content");
+
+  navItems.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      const transitionType = document.documentElement.style.getPropertyValue("--kittle-nav-transition") || "fade";
+
+      navItems.forEach(i => i.classList.remove("active"));
+      contents.forEach(c => {
+        c.classList.remove("active", "fade", "slide-up", "scale");
+        c.style.opacity = "0";
+      });
+
+      item.classList.add("active");
+      contents[index].classList.add("active", transitionType);
+      setTimeout(() => {
+        contents[index].style.opacity = "1";
+      }, 50);
+    });
+  });
+});
+</script>
 
 </body>
 
