@@ -1,3 +1,5 @@
+@import url('../var/kittle.var.css');
+
 .kittle-dropdown {
   position: relative;
   display: inline-block;
@@ -8,25 +10,26 @@
   display: none;
   position: absolute;
   min-width: 180px;
-  padding: 10px;
-  border-radius: 8px;
+  padding: var(--padding);
+  border-radius: var(--rounded);
   transition: all 0.3s ease;
 }
 
 /* Default dropdown item */
 .kittle-dropdown-content a {
   display: block;
-  padding: 10px;
+  padding: var(--padding);
   text-decoration: none;
-  color: black;
-  border-radius: 5px;
+  color: var(--text-color);
+  border-radius: calc(var(--rounded) / 2);
   transition: background 0.2s;
 }
 .kittle-dropdown-content a:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
-/* Animasi Fade In */
+/* 🔹 Animasi */
+/* Fade In */
 .fade-in {
   opacity: 0;
   transform: translateY(-10px);
@@ -37,7 +40,7 @@
   transform: translateY(0);
 }
 
-/* Animasi Slide Down */
+/* Slide Down */
 .slide-down {
   opacity: 0;
   transform: translateY(-20px);
@@ -48,7 +51,7 @@
   transform: translateY(0);
 }
 
-/* Animasi Zoom In */
+/* Zoom In */
 .zoom-in {
   opacity: 0;
   transform: scale(0.8);
@@ -59,7 +62,7 @@
   transform: scale(1);
 }
 
-/* Animasi Rotate In */
+/* Rotate In */
 .rotate-in {
   opacity: 0;
   transform: rotateX(-90deg);
@@ -70,37 +73,39 @@
   transform: rotateX(0);
 }
 
-/* ========== 1. Modern Minimalis ========== */
+/* 🔹 Tema */
+
+/* 🌿 Minimalist */
 .minimalist {
-  background: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
+  background: var(--bg-color);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line-color);
 }
 .minimalist a {
-  color: #333;
+  color: var(--text-color);
   font-weight: bold;
 }
 .minimalist a:hover {
-  background: #f0f0f0;
+  background: rgba(0, 0, 0, 0.05);
 }
 
-/* ========== 2. Cute / Lucu ========== */
+/* 🎀 Cute */
 .cute {
-  background: pink;
+  background: var(--deep-pink);
   box-shadow: 0 4px 6px rgba(255, 182, 193, 0.5);
-  border: 2px solid #ff69b4;
+  border: 2px solid var(--deep-kittle);
 }
 .cute a {
   color: white;
   font-weight: bold;
 }
 .cute a:hover {
-  background: #ffb6c1;
+  background: rgba(255, 182, 193, 0.8);
 }
 
-/* ========== 3. Cyber / Futuristik ========== */
+/* 🕶 Cyber */
 .cyber {
-  background: black;
+  background: var(--deep-black);
   border: 2px solid cyan;
   box-shadow: 0 0 10px cyan;
 }
@@ -113,12 +118,12 @@
   background: rgba(0, 255, 255, 0.2);
 }
 
-/* ========== 4. Glassmorphism ========== */
+/* 🪟 Glassmorphism */
 .glass {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow);
 }
 .glass a {
   color: white;
@@ -127,15 +132,15 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* ========== 5. Neumorphism ========== */
+/* 🌑 Neumorphism */
 .neumorphism {
   background: #e0e0e0;
   box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
               -8px -8px 15px rgba(255, 255, 255, 1);
-  border-radius: 12px;
+  border-radius: var(--rounded);
 }
 .neumorphism a {
-  color: #333;
+  color: var(--text-color);
 }
 .neumorphism a:hover {
   background: rgba(0, 0, 0, 0.05);

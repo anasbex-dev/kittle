@@ -22,6 +22,7 @@
 @import url('components/card-social.css');
 @import url('components/tablayout.css');
 @import url('components/bottomnavigation.css');
+@import url('components/switch.css');
 
 /* -- KITTLE MODULE -- */
 @import url('module/kittle.module.css');

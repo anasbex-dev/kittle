@@ -1,24 +1,81 @@
 :root {
-  /* 🎨 Warna Utama */
+  /* == COLOR MAIN == */
   --primary-color: #A42BC8;
+  --primary-light: #F0F1FF;
+  --primary-dark: #2B2D4A;
+
   --secondary-color: #6A1B9A;
+  --secondary-light: #8E24AA;
+  --secondary-dark: #4A148C;
+
+  /* == COLOR COLLECTION == */
+  --success-color: #4CAF50;
+  --warning-color: #FFC107;
+  --danger-color: #F44336;
+  --info-color: #2196F3;
+
   --bg-color: #f5f5f5;
   --text-color: #333;
   --line-color: #ddd;
+  
+  /* == COLOR V1 == */
+  --deep-black: #242424;
+  --deep-blue: #315898;
+  --deep-pink: #E05DA5;
+  --deep-kittle: #AA54C1;
 
-  /* ✏️ Typography */
+  /* 🌓 Dark Mode */
+  --kittle-dark-bg: #222;
+  --kittle-dark-text: #fff;
+  --kittle-dark-line: #444;
+
+  /* === FONTS UNTILS === */
   --font: 'Arial', sans-serif;
   --kittle-font-small: 12px;
   --kittle-font-medium: 16px;
   --kittle-font-large: 20px;
 
-  /* 📏 Ukuran & Spasi */
+  /* === SIZE & SPACING === */
   --rounded: 8px;
   --padding: 10px;
   --margin: 10px;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  /* 🌓 Dark Mode */
-  --kittle-dark-bg: #222;
-  --kittle-dark-text: #fff;
 }
+
+  /* === COLOR MAIN === */
+.kittle-primary { color: var(--primary-color); }
+.kittle-primary-bg { background-color: var(--primary-color); }
+.kittle-primary-light { color: var(--primary-light); }
+.kittle-primary-dark { color: var(--primary-dark); }
+
+.kittle-secondary { color: var(--secondary-color); }
+.kittle-secondary-bg { background-color: var(--secondary-color); }
+.kittle-secondary-light { color: var(--secondary-light); }
+.kittle-secondary-dark { color: var(--secondary-dark); }
+
+/* COLOR ADDITION */
+.kittle-success { color: var(--success-color); }
+.kittle-success-bg { background-color: var(--success-color); }
+
+.kittle-warning { color: var(--warning-color); }
+.kittle-warning-bg { background-color: var(--warning-color); }
+
+.kittle-danger { color: var(--danger-color); }
+.kittle-danger-bg { background-color: var(--danger-color); }
+
+.kittle-info { color: var(--info-color); }
+.kittle-info-bg { background-color: var(--info-color); }
+
+/* === COLOR TEXT KITTLE === */
+.tc-black { color: #000000; }
+.tc-white { color: #FFFFFF; }
+.tc-deep-black { color: var(--deep-black); }
+
+/* 🎨 Latar & Garis */
+.kittle-bg { background-color: var(--bg-color); }
+.kittle-text { color: var(--text-color); }
+.kittle-line { border-color: var(--line-color); }
+
+/* 🌑 Dark Mode */
+.kittle-dark { background-color: var(--kittle-dark-bg); color: var(--kittle-dark-text); }
+.kittle-dark-line { border-color: var(--kittle-dark-line); }

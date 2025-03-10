@@ -1,24 +1,26 @@
+@import url('../var/kittle.var.css');
+
 /* === KITTLE ACCORDION DEFAULT === */
 .kittle-accordion {
   width: 100%;
   max-width: 600px;
   margin: auto;
-  border-radius: 8px;
+  border-radius: var(--rounded);
   overflow: hidden;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
+  background: var(--bg-color);
 }
 
 .kittle-accordion-item {
-  border-bottom: 1px solid #ddd;
-  overflow: hidden;
+  border-bottom: 1px solid var(--line-color);
 }
 
 .kittle-accordion-title {
-  background: #007bff;
+  background: var(--primary-color);
   color: white;
-  padding: 15px;
+  padding: var(--padding);
   cursor: pointer;
-  font-size: 16px;
+  font-size: var(--kittle-font-medium);
   font-weight: bold;
   transition: 0.3s ease-in-out;
   display: flex;
@@ -27,7 +29,7 @@
 }
 
 .kittle-accordion-title:hover {
-  background: #0056b3;
+  background: var(--secondary-color);
   padding-left: 20px;
 }
 
@@ -44,11 +46,10 @@
 
 .kittle-accordion-content {
   display: none;
-  padding: 15px;
-  background: #f9f9f9;
+  padding: var(--padding);
+  background: var(--bg-color);
   transition: max-height 0.3s ease-in-out;
   max-height: 0;
-  overflow: hidden;
 }
 
 .kittle-accordion-item.active .kittle-accordion-content {
@@ -56,12 +57,14 @@
   max-height: 500px;
 }
 
-/* === BLUR EFFECT (Glassmorphism) === */
+/* === VARIASI STYLING === */
+
+/* 📌 Glassmorphism */
 .kittle-accordion.blur {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow);
 }
 
 .kittle-accordion.blur .kittle-accordion-title {
@@ -73,7 +76,7 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* === MODERN SOFT UI STYLE === */
+/* 🎨 Modern Soft UI */
 .kittle-accordion.modern {
   background: #f1f3f6;
   border-radius: 12px;
@@ -82,8 +85,8 @@
 }
 
 .kittle-accordion.modern .kittle-accordion-title {
-  background: #ffffff;
-  color: #333;
+  background: white;
+  color: var(--text-color);
   border-radius: 8px;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1), -3px -3px 6px rgba(255, 255, 255, 0.7);
 }
@@ -92,16 +95,14 @@
   background: #e0e0e0;
 }
 
-/* === DARK MODE === */
+/* 🌙 Dark Mode */
 .kittle-accordion.dark {
-  background: #222;
-  color: white;
-  border-radius: 8px;
+  background: var(--kittle-dark-bg);
+  color: var(--kittle-dark-text);
 }
 
 .kittle-accordion.dark .kittle-accordion-title {
   background: #333;
-  color: white;
 }
 
 .kittle-accordion.dark .kittle-accordion-title:hover {

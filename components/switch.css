@@ -1,0 +1,150 @@
+@import url('../var/kittle.var.css');
+
+.switch {
+  --switch-width: 50px;
+  --switch-height: 25px;
+  --switch-bg: var(--primary, #007bff);
+  --switch-border: none;
+  --switch-handle: white;
+  --switch-shadow: none;
+
+  position: relative;
+  display: inline-block;
+  width: var(--switch-width);
+  height: var(--switch-height);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--switch-bg);
+  border: var(--switch-border);
+  border-radius: 34px;
+  transition: 0.3s;
+}
+
+.switch-slider::before {
+  content: "";
+  position: absolute;
+  height: calc(var(--switch-height) - 6px);
+  width: calc(var(--switch-height) - 6px);
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--switch-handle);
+  border-radius: 50%;
+  transition: 0.3s;
+  box-shadow: var(--switch-shadow);
+}
+
+input:checked + .switch-slider {
+  background-color: var(--success, #28a745);
+}
+
+input:checked + .switch-slider::before {
+  transform: translateX(calc(var(--switch-width) - var(--switch-height)));
+}
+
+/* Android Default */
+.switch.android {
+  --switch-width: 60px;
+  --switch-height: 30px;
+  --switch-bg: var(--gray, #ccc);
+  --switch-handle: white;
+  --switch-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .switch-slider.android {
+  background-color: var(--primary, #007bff);
+}
+
+input:checked + .switch-slider.android::before {
+  transform: translateX(calc(var(--switch-width) - var(--switch-height)));
+}
+
+/* 🟢 Android Glow */
+.switch.android.glow {
+  --switch-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+/* 🔵 Android Soft */
+.switch.android.soft {
+  --switch-bg: var(--soft-blue, #88c0d0);
+}
+
+/* 🔴 Android Red Mode */
+.switch.android.red {
+  --switch-bg: var(--danger, #dc3545);
+}
+
+/* 🟡 Android Yellow Mode */
+.switch.android.yellow {
+  --switch-bg: var(--warning, #ffc107);
+}
+
+/* Android Custom Colors */
+.switch.android.custom1 {
+  --switch-bg: purple;
+}
+
+.switch.android.custom2 {
+  --switch-bg: gold;
+}
+
+
+/* iPhone Default */
+.switch.iphone {
+  --switch-width: 55px;
+  --switch-height: 28px;
+  --switch-bg: var(--gray-light, #ddd);
+  --switch-border: 1px solid #bbb;
+  --switch-handle: white;
+}
+
+input:checked + .switch-slider.iphone {
+  background-color: var(--primary, #007aff);
+}
+
+input:checked + .switch-slider.iphone::before {
+  transform: translateX(calc(var(--switch-width) - var(--switch-height)));
+}
+
+/* iPhone Soft Mode */
+.switch.iphone.soft {
+  --switch-bg: var(--gray-light, #ddd);
+  --switch-border: none;
+  --switch-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* iPhone Green Mode */
+.switch.iphone.green {
+  --switch-bg: var(--success, #34c759);
+}
+
+/* iPhone Blue */
+.switch.iphone.blue {
+  --switch-bg: var(--primary, #007aff);
+}
+
+/* iPhone Red */
+.switch.iphone.red {
+  --switch-bg: var(--danger, #ff3b30);
+}
+
+/* iPhone Custom */
+.switch.iphone.custom1 {
+  --switch-bg: teal;
+}
+
+.switch.iphone.custom2 {
+  --switch-bg: magenta;
+}

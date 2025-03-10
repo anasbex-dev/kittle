@@ -1,13 +1,21 @@
 .kittle-btn {
+  --btn-bg: #007bff; /* Default Background */
+  --btn-color: white; /* Default Text Color */
+  --btn-border: none; /* Default Border */
+  --btn-shadow: none; /* Default Shadow */
+  
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
-  border: none;
+  border: var(--btn-border);
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
   text-align: center;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  box-shadow: var(--btn-shadow);
 }
 
 .kittle-btn.primary { background-color: #007bff; color: white; }
@@ -62,4 +70,324 @@
 
 .kittle-btn.icon i {
   font-size: 18px;
+}
+
+/* === 1. Neon Effect === */
+.kittle-btn.neon {
+  background: #0f0;
+  color: black;
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+}
+.kittle-btn.neon:hover {
+  box-shadow: 0 0 20px #0f0;
+}
+
+/* === 2. Glassmorphism === */
+.kittle-btn.glass {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* === 3. 3D Button === */
+.kittle-btn.three-d {
+  background: #007bff;
+  color: white;
+  box-shadow: 0 4px #0056b3;
+}
+.kittle-btn.three-d:active {
+  box-shadow: 0 2px #0056b3;
+  transform: translateY(2px);
+}
+
+/* === 4. Skew Button === */
+.kittle-btn.skew {
+  transform: skewX(-15deg);
+}
+.kittle-btn.skew:hover {
+  transform: skewX(0);
+}
+
+/* === 5. Gradient Background === */
+.kittle-btn.gradient {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+}
+
+/* === 6. Pulse Effect === */
+@keyframes pulseBtn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.kittle-btn.pulse {
+  animation: pulseBtn 1s infinite;
+}
+
+/* === 7. Bordered Glow === */
+.kittle-btn.bordered-glow {
+  border: 2px solid white;
+  box-shadow: 0 0 10px white;
+}
+
+/* === 8. Hover Slide Up === */
+.kittle-btn.hover-slide {
+  position: relative;
+  overflow: hidden;
+}
+.kittle-btn.hover-slide::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  top: 100%;
+  left: 0;
+  transition: 0.3s;
+}
+.kittle-btn.hover-slide:hover::before {
+  top: 0;
+}
+
+/* === 9. Wave Effect === */
+.kittle-btn.wave {
+  background: #007bff;
+  color: white;
+}
+.kittle-btn.wave:hover {
+  animation: waveEffect 0.4s linear;
+}
+@keyframes waveEffect {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+/* === 10. Ripple Effect === */
+.kittle-btn.ripple {
+  position: relative;
+  overflow: hidden;
+}
+.kittle-btn.ripple:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: scale(0);
+  transition: transform 0.3s ease-out;
+}
+.kittle-btn.ripple:active:after {
+  transform: scale(3);
+}
+
+/* === 11. Borderless === */
+.kittle-btn.borderless {
+  border: none;
+  background: none;
+  color: #007bff;
+}
+.kittle-btn.borderless:hover {
+  text-decoration: underline;
+}
+
+/* === 12. Shadow Pop === */
+.kittle-btn.shadow-pop {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.kittle-btn.shadow-pop:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+/* === 13. Expand on Hover === */
+.kittle-btn.expand {
+  padding: 10px 20px;
+  transition: padding 0.3s;
+}
+.kittle-btn.expand:hover {
+  padding: 15px 30px;
+}
+
+/* === 14. Metallic Button === */
+.kittle-btn.metallic {
+  background: linear-gradient(45deg, #aaa, #fff, #aaa);
+  color: black;
+  border: 1px solid #ccc;
+}
+
+/* === 15. Pixel Button === */
+.kittle-btn.pixel {
+  font-family: "Courier New", monospace;
+  background: black;
+  color: lime;
+  text-shadow: 2px 2px 0px lime;
+}
+
+/* === 16. Oversized Button === */
+.kittle-btn.oversized {
+  font-size: 20px;
+  padding: 20px 30px;
+}
+
+/* === 17. Jelly Effect === */
+@keyframes jelly {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+.kittle-btn.jelly {
+  animation: jelly 1s infinite;
+}
+
+/* === 18. Text Hover Reveal === */
+.kittle-btn.text-reveal {
+  color: transparent;
+  text-shadow: 0 0 0 #007bff;
+}
+.kittle-btn.text-reveal:hover {
+  color: #007bff;
+}
+
+/* === 19. Mirror Reflection === */
+.kittle-btn.mirror {
+  position: relative;
+}
+.kittle-btn.mirror::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: rgba(255, 255, 255, 0.3);
+  transform: scaleY(-1);
+}
+
+/* === 20. Vibrate Effect === */
+@keyframes vibrate {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+}
+.kittle-btn.vibrate {
+  animation: vibrate 0.1s infinite;
+}
+
+/* === 21. Fancy Border === */
+.kittle-btn.fancy-border {
+  border: 3px double #ff5722;
+}
+
+/* === 22. Floating Button === */
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.kittle-btn.floating {
+  animation: floating 2s infinite;
+}
+
+/* === 23. Color Change === */
+.kittle-btn.color-change:hover {
+  background: #ff5722;
+  color: white;
+}
+
+/* === 24. Slide Left on Hover === */
+.kittle-btn.slide-left:hover {
+  transform: translateX(-10px);
+}
+
+/* === 25. Border Glow on Hover === */
+.kittle-btn.border-glow:hover {
+  box-shadow: 0 0 10px #007bff;
+}
+
+/* === 26. Double Border === */
+.kittle-btn.double-border {
+  border: 4px double #007bff;
+}
+
+/* === 27. Button with Underline === */
+.kittle-btn.underline {
+  border-bottom: 3px solid #007bff;
+}
+
+/* === 28. Transparent Border === */
+.kittle-btn.transparent-border {
+  border: 2px solid transparent;
+}
+.kittle-btn.transparent-border:hover {
+  border-color: white;
+}
+
+/* === 29. Drop Shadow === */
+.kittle-btn.drop-shadow {
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+/* === 30. Corner Cut === */
+.kittle-btn.corner-cut {
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* === 31. 3D Cartoon Button === */
+.kittle-btn.cartoon {
+  background: #ffcc00;
+  color: #333;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  font-family: 'Comic Sans MS', cursive;
+  transition: all 0.2s;
+}
+.kittle-btn.cartoon:active {
+  box-shadow: 2px 2px 0px #000;
+  transform: translateY(2px);
+}
+
+/* === 32. Fire Effect === */
+@keyframes fireGlow {
+  0% { box-shadow: 0 0 5px #ff4500; }
+  50% { box-shadow: 0 0 15px #ff0000; }
+  100% { box-shadow: 0 0 5px #ff4500; }
+}
+.kittle-btn.fire {
+  background: linear-gradient(45deg, #ff4500, #ff0000);
+  color: white;
+  animation: fireGlow 1s infinite alternate;
+}
+
+/* === 33. Ice Button === */
+.kittle-btn.ice {
+  background: linear-gradient(45deg, #00ffff, #007bff);
+  color: white;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+.kittle-btn.ice:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 1);
+}
+
+/* === 34. Wavy Button === */
+@keyframes waveMotion {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+}
+.kittle-btn.wavy {
+  background: #ff69b4;
+  color: white;
+  animation: waveMotion 0.3s infinite ease-in-out;
+}
+
+/* === 35. Pixelated Button === */
+.kittle-btn.pixelated {
+  background: #222;
+  color: lime;
+  font-family: 'Courier New', monospace;
+  border: 3px solid lime;
+  text-shadow: 2px 2px 0px lime;
+}
+.kittle-btn.pixelated:hover {
+  filter: contrast(1.5);
 }

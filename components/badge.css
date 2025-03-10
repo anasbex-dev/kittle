@@ -1,17 +1,21 @@
+@import url('../var/kittle.var.css');
+
 .kittle-badge {
-  padding: 5px 10px;
-  font-size: 12px;
+  padding: var(--padding);
+  font-size: var(--kittle-font-small);
   font-weight: bold;
-  border-radius: 20px;
+  border-radius: var(--rounded);
   display: inline-block;
   text-align: center;
 }
 
-.kittle-badge.primary { background: #007bff; color: white; }
-.kittle-badge.secondary { background: #6c757d; color: white; }
-.kittle-badge.success { background: #28a745; color: white; }
-.kittle-badge.warning { background: #ffc107; color: black; }
-.kittle-badge.danger { background: #dc3545; color: white; }
+/* Menggunakan warna dari `kittle.var.css` */
+.kittle-badge.primary { background: var(--primary-color); color: var(--kittle-dark-text); }
+.kittle-badge.secondary { background: var(--secondary-color); color: var(--kittle-dark-text); }
+.kittle-badge.success { background: var(--success-color); color: var(--kittle-dark-text); }
+.kittle-badge.warning { background: var(--warning-color); color: var(--kittle-dark-bg); }
+.kittle-badge.danger { background: var(--danger-color); color: var(--kittle-dark-text); }
+.kittle-badge.info { background: var(--info-color); color: var(--kittle-dark-text); }
 
 /* 💎 Model Baru */
 
@@ -19,7 +23,7 @@
 .kittle-badge.blur {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--line-color);
 }
 
 /* 🔹 Outline */
@@ -28,15 +32,16 @@
   border: 2px solid;
 }
 
-.kittle-badge.primary.outline { color: #007bff; border-color: #007bff; }
-.kittle-badge.secondary.outline { color: #6c757d; border-color: #6c757d; }
-.kittle-badge.success.outline { color: #28a745; border-color: #28a745; }
-.kittle-badge.warning.outline { color: #ffc107; border-color: #ffc107; }
-.kittle-badge.danger.outline { color: #dc3545; border-color: #dc3545; }
+.kittle-badge.primary.outline { color: var(--primary-color); border-color: var(--primary-color); }
+.kittle-badge.secondary.outline { color: var(--secondary-color); border-color: var(--secondary-color); }
+.kittle-badge.success.outline { color: var(--success-color); border-color: var(--success-color); }
+.kittle-badge.warning.outline { color: var(--warning-color); border-color: var(--warning-color); }
+.kittle-badge.danger.outline { color: var(--danger-color); border-color: var(--danger-color); }
+.kittle-badge.info.outline { color: var(--info-color); border-color: var(--info-color); }
 
 /* 🔹 Soft Mode */
 .kittle-badge.soft {
   background: rgba(255, 255, 255, 0.2);
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  border: 1px solid var(--line-color);
 }

@@ -415,3 +415,101 @@
   50% { transform: translateX(-2px); }
   100% { transform: translateX(2px); }
 }
+
+/* === ANGKER STYLE NEKOAYUMU === */
+
+/* 1. Horror Puppet Style */
+.horror-puppet {
+    filter: grayscale(100%) contrast(150%) sepia(20%);
+    animation: puppetMove 3s infinite alternate;
+}
+@keyframes puppetMove {
+    0% { transform: rotate(-3deg) translateY(2px); }
+    100% { transform: rotate(3deg) translateY(-2px); }
+}
+
+/* 2. Neon Nightmare */
+.neon-nightmare {
+    text-shadow: 0 0 10px red, 0 0 20px blue, 0 0 30px purple;
+    animation: neonFlicker 0.1s infinite alternate;
+}
+@keyframes neonFlicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.8; filter: blur(2px); }
+}
+
+/* 3. Distorted Reality */
+.distorted-reality {
+    filter: blur(3px) contrast(200%) hue-rotate(30deg);
+    animation: distort 0.2s infinite alternate;
+}
+@keyframes distort {
+    0% { transform: skewX(-3deg) skewY(3deg); }
+    100% { transform: skewX(3deg) skewY(-3deg); }
+}
+
+/* 4. Flesh Horror */
+.flesh-horror {
+    background: url('texture-daging.jpg');
+    filter: saturate(150%) brightness(80%);
+    animation: fleshPulse 1s infinite alternate;
+}
+@keyframes fleshPulse {
+    0% { transform: scale(1); filter: brightness(90%); }
+    100% { transform: scale(1.05); filter: brightness(110%); }
+}
+
+/* 5. Reverse Shadows */
+.reverse-shadows {
+    background: radial-gradient(circle, black 30%, white 90%);
+    filter: invert(1);
+}
+
+/* 6. Inverted Entity */
+.inverted-entity {
+    filter: invert(100%) contrast(200%);
+    animation: entityFlicker 0.3s infinite alternate;
+}
+@keyframes entityFlicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* 7. VHS Cursed Tape */
+.vhs-cursed {
+    filter: contrast(200%) brightness(50%);
+    animation: vhsGlitch 0.05s infinite alternate;
+}
+@keyframes vhsGlitch {
+    0% { transform: translateX(2px); }
+    100% { transform: translateX(-2px); }
+}
+
+/* 8. Suffocating Darkness */
+.suffocating-darkness {
+    box-shadow: inset 0 0 50px black;
+    animation: darkConsume 3s infinite alternate;
+}
+@keyframes darkConsume {
+    0% { box-shadow: inset 0 0 10px black; }
+    100% { box-shadow: inset 0 0 50px black; }
+}
+
+/* 9. Uncanny Valley Nightmare */
+.uncanny-valley {
+    filter: hue-rotate(180deg) blur(1px);
+    animation: uncannyStare 2s infinite alternate;
+}
+@keyframes uncannyStare {
+    0% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* 10. Time Loop Horror */
+.time-loop-horror {
+    animation: timeLoop 5s infinite;
+}
+@keyframes timeLoop {
+    0%, 100% { filter: sepia(0); }
+    50% { filter: sepia(100%); }
+}

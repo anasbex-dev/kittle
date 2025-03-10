@@ -1,13 +1,18 @@
 @import url('../var/kittle.var.css');
+
 :root {
   --index: 1000;
-  --kittle-brand-color: #A42BC8;
-  --kittle-nav-bg: #fff;
-  --kittle-active-color: var(--kittle-brand-color);
-  --kittle-nav-text-color: #333;
+  --kittle-nav-bg: var(--bg-color);
+  --kittle-nav-active: var(--primary-color);
+  --kittle-nav-text: var(--text-color);
   --kittle-nav-icon-size: 24px;
-  --kittle-nav-padding: 10px;
+  --kittle-nav-padding: 12px;
+  --kittle-nav-border: 2px solid var(--primary-color);
+  --kittle-nav-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+
+  /* ✨ Animasi Transisi */
   --kittle-nav-transition: fade; /* Bisa: fade, slide-up, scale */
+  --kittle-transition-speed: 0.3s;
 }
 
 .kittle-bottom-nav {
@@ -20,18 +25,18 @@
   justify-content: space-around;
   background: var(--kittle-nav-bg);
   padding: var(--kittle-nav-padding);
-  border-top: 2px solid var(--primary-color);
-  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+  border-top: var(--kittle-nav-border);
+  box-shadow: var(--kittle-nav-shadow);
 }
 
 .kittle-nav-item {
   flex: 1;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
   cursor: pointer;
   font-size: 14px;
-  color: var(--kittle-nav-text-color);
-  transition: color 0.3s;
+  color: var(--kittle-nav-text);
+  transition: color var(--kittle-transition-speed);
 }
 
 .kittle-nav-item i {
@@ -41,7 +46,7 @@
 }
 
 .kittle-nav-item.active {
-  color: var(--primary-color);
+  color: var(--kittle-nav-active);
 }
 
 /* Animasi Transisi */
@@ -49,21 +54,24 @@
   display: none;
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity var(--kittle-transition-speed) ease-in-out,
+              transform var(--kittle-transition-speed) ease-in-out;
 }
 
 .kittle-nav-content.fade {
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity var(--kittle-transition-speed) ease-in-out;
 }
 
 .kittle-nav-content.slide-up {
   transform: translateY(50px);
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: transform var(--kittle-transition-speed) ease-in-out,
+              opacity var(--kittle-transition-speed) ease-in-out;
 }
 
 .kittle-nav-content.scale {
   transform: scale(0.8);
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: transform var(--kittle-transition-speed) ease-in-out,
+              opacity var(--kittle-transition-speed) ease-in-out;
 }
 
 .kittle-nav-content.active {
