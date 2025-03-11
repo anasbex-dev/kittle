@@ -3,7 +3,7 @@ class CardKittle extends HTMLElement {
     super();
     this.attachShadow({ mode: "open" });
   }
-
+  
   connectedCallback() {
     const bgColor = this.getAttribute("bg-color") || "#fff";
     const textColor = this.getAttribute("text-color") || "#000";
@@ -12,8 +12,43 @@ class CardKittle extends HTMLElement {
     const shadow = this.hasAttribute("shadow") ? "0 4px 15px rgba(0, 0, 0, 0.2)" : "none";
     const hoverShadow = this.hasAttribute("hover-shadow") ? "0 6px 20px rgba(0, 0, 0, 0.25)" : shadow;
     const isUnderline = this.hasAttribute("kittle-unline");
-    const colorUnline = this.hasAttribute("unline-color") || "#fff";
-
+    const colorUnline = this.getAttribute("unline-color") || "#fff";
+    const positionContent = this.getAttribute("position-content") || "center";
+    
+    // Atur ukuran gambar dari atribut (jika ada)
+    const imgWidth = this.getAttribute("img-width") || "100%";
+    const imgHeight = this.getAttribute("img-height") || "auto";
+    
+    // Konversi position-content menjadi flexbox alignment
+    let justifyContent = "center";
+    let alignItems = "center";
+    
+    switch (positionContent) {
+      case "top":
+        alignItems = "flex-start";
+        break;
+      case "bottom":
+        alignItems = "flex-end";
+        break;
+      case "left":
+        justifyContent = "flex-start";
+        break;
+      case "right":
+        justifyContent = "flex-end";
+        break;
+      case "center-vertical":
+        alignItems = "center";
+        justifyContent = "flex-start";
+        break;
+      case "center-horizontal":
+        justifyContent = "center";
+        alignItems = "flex-start";
+        break;
+      default:
+        justifyContent = "center";
+        alignItems = "center";
+    }
+    
     this.shadowRoot.innerHTML = `
       <style>
         :host {
@@ -29,6 +64,10 @@ class CardKittle extends HTMLElement {
           transition: all 0.3s ease-in-out;
           position: relative;
           overflow: hidden;
+          display: flex;
+          justify-content: ${justifyContent};
+          align-items: ${alignItems};
+          height: 100%; /* Agar konten bisa berposisi secara fleksibel */
         }
 
         .card:hover {
@@ -38,6 +77,25 @@ class CardKittle extends HTMLElement {
         .card-content {
           position: relative;
           z-index: 2;
+          display: flex;
+          flex-direction: column;
+          justify-content: ${justifyContent};
+          align-items: ${alignItems};
+          text-align: ${justifyContent === "center" ? "center" : "left"};
+          width: 100%;
+        }
+
+        /* Pastikan semua elemen dalam card ikut pindah posisi */
+        ::slotted(*) {
+          max-width: 100%;
+        }
+
+        /* Gambar yang ada dalam card akan mengikuti ukuran atribut */
+        ::slotted(img) {
+          width: ${imgWidth};
+          height: ${imgHeight};
+          max-width: 100%;
+          border-radius: 5px;
         }
 
         /* Efek garis bawah */

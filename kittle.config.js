@@ -6,7 +6,10 @@ class Kittle {
 }
 
 export default Kittle;
-// == COMPONENTS ==
 
+// == COMPONENTS ==
 import "./components/@components/kittle-navbar.js";
 import "./components/@components/kittle-card.js";
+
+// == MODULE ==
+import "./module/@module/kittle-layout.js"

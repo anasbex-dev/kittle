@@ -42,7 +42,7 @@
 
   /* === SIZE & SPACING === */
   --rounded: 8px;
-  --padding: 10px;
+  --padding: 8px;
   --margin: 10px;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

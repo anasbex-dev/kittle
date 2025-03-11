@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../kittle-1.0.0.css">
   <script type="module" src="../kittle-1.0.0.js"></script>
 </head>
-<body>
+<body style="--body:19px;">
 
 <navbar-kittle bg-dark rounded>
   <span slot="logo">My Logo</span>
@@ -16,9 +16,22 @@
   <a slot="menu" href="#" class="nav-link">Contact</a>
 </navbar-kittle>
 
-<card-kittle bg-color="#fff" text-color="black" rounded="13px" kittle-unline>
+  <card-kittle bg-color="lightcoral" text-color="white" rounded="13px" kittle-unline position-content="top">
   <h2>Kartu Biru</h2>
   <p>Isi dari kartu ini berwarna biru dengan teks putih.</p>
+</card-kittle>
+  <card-kittle bg-color="blue" text-color="black" rounded="13px" kittle-unline position-content="bottom">
+  <h2>Kartu Biru</h2>
+  <p>Isi dari kartu ini berwarna biru dengan teks putih.</p>
+</card-kittle>
+
+<card-kittle bg-color="lightblue" text-color="black" rounded="12px" padding="20px" shadow 
+  position-content="center" img-width="210px" img-height="100px" kittle-unline>
+  
+  <img src="../assets/image/kittle.png" alt="Kucing Lucu">
+  <h3>Kucing Imut</h3>
+  <p>Ini adalah kucing yang sangat lucu.</p>
+
 </card-kittle>
 
   <button-kittle color="primary">Tombol Utama</button-kittle>
