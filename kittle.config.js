@@ -23,6 +23,7 @@ import "./components/@components/kittle-bottomnavigation.js";
 import "./components/@components/kittle-badge.js";
 import "./components/@components/kittle-modal.js";
 import "./components/@components/kittle-togglemenu.js";
+import "./components/@components/kittle-accordions.js";
 
 // == MODULE ==
 import "./module/@module/kittle-layout.js";
