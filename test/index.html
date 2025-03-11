@@ -9,14 +9,17 @@
 </head>
 <body>
 
-<navbar-kittle bg-dark>
-  <span slot="logo">Kittle</span>
-  <div slot="menu">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </div>
+<navbar-kittle bg-dark rounded>
+  <span slot="logo">My Logo</span>
+  <a slot="menu" href="#" class="nav-link">Home</a>
+  <a slot="menu" href="#" class="nav-link">About</a>
+  <a slot="menu" href="#" class="nav-link">Contact</a>
 </navbar-kittle>
+
+<card-kittle bg-color="#fff" text-color="black" rounded="13px" kittle-unline>
+  <h2>Kartu Biru</h2>
+  <p>Isi dari kartu ini berwarna biru dengan teks putih.</p>
+</card-kittle>
 
   <button-kittle color="primary">Tombol Utama</button-kittle>
   <button-kittle color="secondary">Tombol Kedua</button-kittle>

@@ -120,7 +120,7 @@ input:checked + .switch-slider.iphone::before {
 
 /* iPhone Soft Mode */
 .switch.iphone.soft {
-  --switch-bg: var(--gray-light, #ddd);
+  --switch-bg: var(--gray-light, ##404040);
   --switch-border: none;
   --switch-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -137,7 +137,7 @@ input:checked + .switch-slider.iphone::before {
 
 /* iPhone Red */
 .switch.iphone.red {
-  --switch-bg: var(--danger, #ff3b30);
+  --switch-bg: var(--danger, #404040);
 }
 
 /* iPhone Custom */

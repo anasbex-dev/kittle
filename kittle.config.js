@@ -8,6 +8,5 @@ class Kittle {
 export default Kittle;
 // == COMPONENTS ==
 
-import "./components/button.js";
-import "./components/@components/navbar.js";
-import "./components/switch.js";
+import "./components/@components/kittle-navbar.js";
+import "./components/@components/kittle-card.js";

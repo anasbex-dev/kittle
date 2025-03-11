@@ -2,7 +2,7 @@
   /* == COLOR MAIN == */
   --primary-color: #A42BC8;
   --primary-light: #F0F1FF;
-  --primary-dark: #2B2D4A;
+  --primary-dark: #222331;
 
   --secondary-color: #6A1B9A;
   --secondary-light: #8E24AA;
@@ -24,10 +24,15 @@
   --deep-pink: #E05DA5;
   --deep-kittle: #AA54C1;
 
-  /* 🌓 Dark Mode */
+  /* Dark Mode */
   --kittle-dark-bg: #222;
   --kittle-dark-text: #fff;
   --kittle-dark-line: #444;
+  
+  /* Light Mode */
+  --kittle-light-bg: #FFFFFF;
+  --kittle-light-text: #1F1F1F;
+  --kittle-light-line: #474747;
 
   /* === FONTS UNTILS === */
   --font: 'Arial', sans-serif;
