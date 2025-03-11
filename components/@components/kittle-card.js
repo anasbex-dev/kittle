@@ -12,7 +12,7 @@ class CardKittle extends HTMLElement {
     const shadow = this.hasAttribute("shadow") ? "0 4px 15px rgba(0, 0, 0, 0.2)" : "none";
     const hoverShadow = this.hasAttribute("hover-shadow") ? "0 6px 20px rgba(0, 0, 0, 0.25)" : shadow;
     const isUnderline = this.hasAttribute("kittle-unline");
-    const colorUnline = this.getAttribute("unline-color") || "#fff";
+    const colorUnline = this.getAttribute("unline-color") || textColor;
     const positionContent = this.getAttribute("position-content") || "center";
     
     // Atur ukuran gambar dari atribut (jika ada)
@@ -67,7 +67,7 @@ class CardKittle extends HTMLElement {
           display: flex;
           justify-content: ${justifyContent};
           align-items: ${alignItems};
-          height: 100%; /* Agar konten bisa berposisi secara fleksibel */
+          height: 100%;
         }
 
         .card:hover {

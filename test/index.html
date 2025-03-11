@@ -16,26 +16,42 @@
   <a slot="menu" href="#" class="nav-link">Contact</a>
 </navbar-kittle>
 
+<kittle-button bg-color="blue" text-color="white" padding="14px 30px">
+  Klik Aku!
+</kittle-button>
+<kittle-button glass blur-shadow>Tekan Aku</kittle-button>
+<kittle-grid rounded="20px" bg-color="white">
+  <div style="background: lightpink; padding: 20px;">Rounded Item</div>
+  <div style="background: lightseagreen; padding: 20px;">Rounded Item</div>
+</kittle-grid>
+<kittle-grid columns="4" gap="20px">
+  <div style="background: pink; padding: 20px;">Box 1</div>
+  <div style="background: lightgray; padding: 20px;">Box 2</div>
+  <div style="background: yellow; padding: 20px;">Box 3</div>
+  <div style="background: cyan; padding: 20px;">Box 4</div>
+</kittle-grid>
   <card-kittle bg-color="lightcoral" text-color="white" rounded="13px" kittle-unline position-content="top">
   <h2>Kartu Biru</h2>
   <p>Isi dari kartu ini berwarna biru dengan teks putih.</p>
 </card-kittle>
-  <card-kittle bg-color="blue" text-color="black" rounded="13px" kittle-unline position-content="bottom">
+  <card-kittle bg-color="blue" text-color="black" rounded="13px" kittle-unline unline-color="red" position-content="bottom">
   <h2>Kartu Biru</h2>
   <p>Isi dari kartu ini berwarna biru dengan teks putih.</p>
 </card-kittle>
 
-<card-kittle bg-color="lightblue" text-color="black" rounded="12px" padding="20px" shadow 
-  position-content="center" img-width="210px" img-height="100px" kittle-unline>
-  
-  <img src="../assets/image/kittle.png" alt="Kucing Lucu">
-  <h3>Kucing Imut</h3>
-  <p>Ini adalah kucing yang sangat lucu.</p>
+<kittle-overscroll mode-scroll="horizontal" width="130px" height="200px">
+  <p style="white-space: nowrap; margin-right: 20px;">Item 1</p>
+  <p style="white-space: nowrap; margin-right: 20px;">Item 2</p>
+  <p style="white-space: nowrap; margin-right: 20px;">Item 3</p>
+</kittle-overscroll>
 
-</card-kittle>
-
-  <button-kittle color="primary">Tombol Utama</button-kittle>
-  <button-kittle color="secondary">Tombol Kedua</button-kittle>
+<kittle-overscroll height="200px">
+  <p>Item 1</p>
+  <p>Item 2</p>
+  <p>Item 3</p>
+  <p>Item 4</p>
+  <p>Item 5</p>
+</kittle-overscroll>
 
 </body>
 </html>
