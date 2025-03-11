@@ -17,6 +17,10 @@ import "./components/@components/kittle-card.js";
 import "./components/@components/kittle-button.js";
 import "./components/@components/kittle-grid.js";
 import "./components/@components/kittle-overscroll.js";
+import "./components/@components/kittle-bottomnavigation.js";
+import "./components/@components/kittle-badge.js";
+import "./components/@components/kittle-modal.js";
+import "./components/@components/kittle-togglemenu.js";
 
 // == MODULE ==
 import "./module/@module/kittle-layout.js";

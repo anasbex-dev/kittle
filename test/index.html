@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kittle Framework</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="../kittle-1.0.0.css">
   <script type="module" src="../kittle-1.0.0.js"></script>
 </head>
@@ -15,6 +16,67 @@
   <a slot="menu" href="#" class="nav-link">About</a>
   <a slot="menu" href="#" class="nav-link">Contact</a>
 </navbar-kittle>
+
+<!-- Badge Default -->
+<kittle-badge>New</kittle-badge>
+
+<!-- Badge dengan Warna & Border -->
+<kittle-badge bg-color="#1e90ff" text-color="#fff">Info</kittle-badge>
+
+<!-- Badge Dot -->
+<div style="position: relative;">
+  Notifikasi
+  <kittle-badge badge-type="dot" bg-color="green"></kittle-badge>
+</div>
+
+<!-- Badge Outlined -->
+<kittle-badge badge-type="outlined" bg-color="#ff4757">Warning</kittle-badge>
+
+<!-- Badge Pill -->
+<kittle-badge badge-type="pill" bg-color="#2ed573">Success</kittle-badge>
+
+<!-- Badge dengan Icon -->
+<kittle-badge badge-type="icon" icon="star" bg-color="gold" text-color="black"></kittle-badge>
+
+<kittle-modal id="myModal" modal-type="neon" width="500px" close-outside disable-scroll>
+  <h2>Selamat Datang</h2>
+  <p>Ini adalah contoh modal Kittle dengan efek bounce.</p>
+<kittle-button bg-color="blue" text-color="white" padding="14px 30px">
+  Klik Aku!
+</kittle-button>
+</kittle-modal>
+
+<kittle-togglemenu id="menu1" position="left" width="250px" background="#f8f9fa" close-outside>
+  <h2>Menu</h2>
+  <ul>
+    <li>Home</li>
+    <li>Profile</li>
+    <li>Settings</li>
+  </ul>
+</kittle-togglemenu>
+
+<button onclick="document.getElementById('menu1').open()">Buka Menu</button>
+<button onclick="document.getElementById('menu1').close()">Tutup Menu</button>
+
+<kittle-button onclick="document.getElementById('myModal').open()">Buka Modal</kittle-button>
+<kittle-bottomnavigation bg-color="black" active-color="#6200ea" text-color="#555" shadow rounded="20px">
+  <div class="nav-item active">
+    <i class="material-icons">home</i>
+    <span>Home</span>
+  </div>
+  <div class="nav-item">
+    <i class="material-icons">search</i>
+    <span>Search</span>
+  </div>
+  <div class="nav-item">
+    <i class="material-icons">favorite</i>
+    <span>Favorites</span>
+  </div>
+  <div class="nav-item">
+    <i class="material-icons">person</i>
+    <span>Profile</span>
+  </div>
+</kittle-bottomnavigation>
 
 <kittle-button bg-color="blue" text-color="white" padding="14px 30px">
   Klik Aku!
