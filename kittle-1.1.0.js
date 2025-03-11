@@ -1,1 +1,1 @@
-import "./kittle.config.js";
+import "/kittle.config.js";
