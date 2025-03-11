@@ -2,7 +2,7 @@ class KittleToggleMenu extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    this.isOpen = false; // Default menu tertutup
+    this.isOpen = false;
   }
   
   connectedCallback() {
@@ -11,7 +11,7 @@ class KittleToggleMenu extends HTMLElement {
     const height = this.getAttribute("height") || "100%";
     const background = this.getAttribute("background") || "#fff";
     const textColor = this.getAttribute("text-color") || "#333";
-    const zIndex = this.getAttribute("index") || "1000";
+    const zIndex = this.getAttribute("z-index") || "1000";
     const closeOnOutsideClick = this.hasAttribute("close-outside");
     
     this.shadowRoot.innerHTML = `
@@ -28,11 +28,19 @@ class KittleToggleMenu extends HTMLElement {
           color: ${textColor};
           z-index: ${zIndex};
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-          transition: transform 0.4s ease-in-out;
+          transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
           ${this.getInitialTransform(position)}
           display: flex;
           flex-direction: column;
           padding: 20px;
+          opacity: 0;
+          visibility: hidden;
+          will-change: transform, opacity;
+        }
+
+        :host(.loaded) {
+          opacity: 1;
+          visibility: visible;
         }
 
         :host(.open) {
@@ -64,10 +72,8 @@ class KittleToggleMenu extends HTMLElement {
     this.menu = this.shadowRoot.host;
     this.closeBtn = this.shadowRoot.querySelector(".close-btn");
     
-    // Event untuk tombol close
     this.closeBtn.addEventListener("click", () => this.close());
     
-    // Event untuk klik luar (opsional)
     if (closeOnOutsideClick) {
       document.addEventListener("click", (event) => {
         if (!this.contains(event.target) && this.isOpen) {
@@ -75,6 +81,10 @@ class KittleToggleMenu extends HTMLElement {
         }
       });
     }
+    
+    requestAnimationFrame(() => {
+      this.classList.add("loaded");
+    });
   }
   
   open() {

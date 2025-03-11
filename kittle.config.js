@@ -12,6 +12,8 @@ class Kittle {
 export default Kittle;
 
 // == COMPONENTS ==
+import "./components/@components/kittle-alert.js";
+import "./components/@components/kittle-dropdown.js";
 import "./components/@components/kittle-navbar.js";
 import "./components/@components/kittle-card.js";
 import "./components/@components/kittle-button.js";
@@ -24,3 +26,5 @@ import "./components/@components/kittle-togglemenu.js";
 
 // == MODULE ==
 import "./module/@module/kittle-layout.js";
+import "./module/@module/kittle-2dcanvas.js";
+import "./module/@module/kittle-3d.js";

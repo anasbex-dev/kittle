@@ -46,37 +46,25 @@
 </kittle-button>
 </kittle-modal>
 
-<kittle-togglemenu id="menu1" position="left" width="250px" background="#f8f9fa" close-outside>
-  <h2>Menu</h2>
-  <ul>
-    <li>Home</li>
-    <li>Profile</li>
-    <li>Settings</li>
-  </ul>
-</kittle-togglemenu>
-
-<button onclick="document.getElementById('menu1').open()">Buka Menu</button>
-<button onclick="document.getElementById('menu1').close()">Tutup Menu</button>
-
+<kittle-dropdown position="right" animation="scale">
+  <button slot="button">Click Me</button>
+  <div slot="menu">
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+    <a href="#">Logout</a>
+  </div>
+</kittle-dropdown>
+<kittle-dropdown trigger="hover">
+  <span slot="button">Hover Me</span>
+  <div slot="menu">
+    <p>Option 1</p>
+    <p>Option 2</p>
+  </div>
+</kittle-dropdown>
+<kittle-alert type="info" animation="slide" blur>
+  Data berhasil disimpan!
+</kittle-alert>
 <kittle-button onclick="document.getElementById('myModal').open()">Buka Modal</kittle-button>
-<kittle-bottomnavigation bg-color="black" active-color="#6200ea" text-color="#555" shadow rounded="20px">
-  <div class="nav-item active">
-    <i class="material-icons">home</i>
-    <span>Home</span>
-  </div>
-  <div class="nav-item">
-    <i class="material-icons">search</i>
-    <span>Search</span>
-  </div>
-  <div class="nav-item">
-    <i class="material-icons">favorite</i>
-    <span>Favorites</span>
-  </div>
-  <div class="nav-item">
-    <i class="material-icons">person</i>
-    <span>Profile</span>
-  </div>
-</kittle-bottomnavigation>
 
 <kittle-button bg-color="blue" text-color="white" padding="14px 30px">
   Klik Aku!
