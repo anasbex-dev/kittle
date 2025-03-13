@@ -5,6 +5,12 @@
     "module/@module/"
   ],
   "files": [
+    "kittle-angker.js",
+    "kittle-navbaremo.js",
+    "kittle-input.js",
+    "kittle-shimmer.js",
+    "kittle-nestedscroll.js",
+    "kittle-loading.js",
     "kittle-switch.js",
     "kittle-togglemenu.js",
     "kittle-bottomnavigation.js",

@@ -2,7 +2,7 @@
 import "/kittle.config.js";
 
 // === CDN ACCESS ===
-class Kittle {
+/*class Kittle {
   static define(name, component) {
     customElements.define(name, component);
   }
@@ -31,4 +31,4 @@ export default Kittle;
   } catch (error) {
     console.error("❌ Gagal memuat Kittle:", error);
   }
-})();
+})();*/

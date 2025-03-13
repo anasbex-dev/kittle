@@ -9,6 +9,25 @@
   <script type="module" src="../kittle-1.0.1.js"></script>
 </head>
 <body style="--body:19px;">
+  
+<kittle-navbaremo menu-type="drawer" bg-color="gray" color="white" rounded="true">
+  <kittle-input type="text" placeholder="Cari sesuatu..." icon="search" style="glassy"></kittle-input>
+  <kittle-accordions 
+  title="Documents Kittle" 
+  bg-color="#222" 
+  header-bg="#333" 
+  header-hover-bg="#444" 
+  border-color="#555" 
+  border-radius="12"
+  shadow
+  auto-close>
+  <kittle-a>Navbar Documents</kittle-a>
+  <kittle-a>Switch Documents</kittle-a>
+</kittle-accordions>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</kittle-navbaremo>
 
 <navbar-kittle bg-dark rounded>
   <span slot="logo">My Logo</span>
@@ -17,7 +36,18 @@
   <a slot="menu" href="#" class="nav-link">Contact</a>
 </navbar-kittle>
 
-<kittle-switch checked color="lightseagreen" size="large" rounded blur></kittle-switch>
+<script>
+  
+</script>
+
+<kittle-animation animation="shake" duration="0.9s" iteration="infinite">
+  <kittle-switch checked color="lightseagreen" size="large" rounded blur shake></kittle-switch>
+</kittle-animation>
+<br>
+<kittle-input type="text" placeholder="Nama kamu..." size="large" style="bordered"></kittle-input>
+<kittle-input type="number" placeholder="Masukkan angka..." size="small" style="underlined"></kittle-input>
+<kittle-input type="text" placeholder="Password..." icon="eye" style="rounded"></kittle-input>
+<kittle-input type="text" placeholder="Masukkan teks..." style="shadowed"></kittle-input>
 
 <kittle-accordions 
   title="Custom Style" 

@@ -12,7 +12,14 @@ class Kittle {
 export default Kittle;
 
 // == COMPONENTS ==
-import "./components/@components/kittle-switch.js"
+import "./components/@components/kittle-angker.js";
+import "./components/@components/kittle-navbaremo.js";
+import "./components/@components/kittle-input.js";
+import "./components/@components/kittle-animation.js";
+import "./components/@components/kittle-shimmer.js";
+//import "./components/@components/kittle-nestedscroll.js";
+import "./components/@components/kittle-loading.js";
+import "./components/@components/kittle-switch.js";
 import "./components/@components/kittle-alert.js";
 import "./components/@components/kittle-dropdown.js";
 import "./components/@components/kittle-navbar.js";
