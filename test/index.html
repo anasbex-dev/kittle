@@ -35,6 +35,11 @@
   <a slot="menu" href="#" class="nav-link">About</a>
   <a slot="menu" href="#" class="nav-link">Contact</a>
 </navbar-kittle>
+<kittle-guard>
+  <h1>Website Terproteksi</h1>
+  <p>Ini adalah teks yang tidak bisa diklik, diseleksi, atau dicopy.</p>
+  <a href="https://example.com">Link ini tidak bisa di-preview saat klik panjang</a>
+</kittle-guard>
 
 <script>
   
@@ -49,6 +54,14 @@
 <kittle-input type="text" placeholder="Password..." icon="eye" style="rounded"></kittle-input>
 <kittle-input type="text" placeholder="Masukkan teks..." style="shadowed"></kittle-input>
 
+<kittle-tooltip text="Ini Tooltip!" pos="top" bg="black" color="white" pd="10px 15px" rad="8px" style-type="glass">
+  <button>Hover aku!</button>
+</kittle-tooltip>
+
+<kittle-tooltip text="Neon Tooltip!" pos="left" style-type="soft-dark">
+  <span>Neon efek!</span>
+</kittle-tooltip>
+<kittle-guard>
 <kittle-accordions 
   title="Custom Style" 
   bg-color="#222" 
@@ -71,6 +84,7 @@
   auto-close>
   Ini adalah accordion dengan style gelap.
 </kittle-accordions>
+</kittle-guard>
 
 <!-- Badge Default -->
 <kittle-badge>New</kittle-badge>

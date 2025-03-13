@@ -9,7 +9,7 @@ class KittleAngker extends HTMLElement {
     const href = this.getAttribute("href") || "#";
     const clr = this.getAttribute("clr") || "inherit"; // Warna teks
     const fs = this.getAttribute("fs") || "inherit"; // Ukuran font
-    const pd = this.getAttribute("pd") || "0"; // Padding
+    const pd = this.getAttribute("pd") || "8"; // Padding
     const mg = this.getAttribute("mg") || "0"; // Margin
     const fw = this.getAttribute("fw") || "normal"; // Ketebalan font
     const styleAttr = this.getAttribute("style") || ""; // Atribut tambahan untuk gaya bebas

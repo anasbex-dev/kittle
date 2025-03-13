@@ -5,6 +5,8 @@
     "module/@module/"
   ],
   "files": [
+    "kittle-tooltip.js",
+    "kittle-guard.js",
     "kittle-angker.js",
     "kittle-navbaremo.js",
     "kittle-input.js",

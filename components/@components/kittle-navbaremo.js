@@ -6,6 +6,7 @@ class KittleNavbar extends HTMLElement {
     // Default attributes
     this.logo = this.getAttribute("logo") || "";
     this.toggleIcon = this.getAttribute("toggle-icon") || "☰";
+    this.logoText = this.getAttribute("logo-text") || "Your Name";
     this.responsive = this.getAttribute("responsive") !== "false";
     this.menuType = this.getAttribute("menu-type") || "default";
     this.bgColor = this.getAttribute("bg-color") || "rgba(30, 30, 30, 0.9)";
@@ -153,7 +154,7 @@ class KittleNavbar extends HTMLElement {
       <nav class="navbar">
         <div class="logo">
           ${this.logo ? `<img src="${this.logo}" alt="Logo">` : ""}
-          <span>KittleNavbar</span>
+          <span>${this.logoText}</span>
         </div>
         <button class="toggle-btn">${this.getToggleIconHTML()}</button>
         <div class="menu">${menuItems}</div>

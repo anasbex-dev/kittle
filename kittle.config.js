@@ -12,6 +12,7 @@ class Kittle {
 export default Kittle;
 
 // == COMPONENTS ==
+import "./components/@components/kittle-tooltip.js";
 import "./components/@components/kittle-angker.js";
 import "./components/@components/kittle-navbaremo.js";
 import "./components/@components/kittle-input.js";
@@ -34,6 +35,7 @@ import "./components/@components/kittle-togglemenu.js";
 import "./components/@components/kittle-accordions.js";
 
 // == MODULE ==
+import "./module/@module/kittle-guard.js";
 import "./module/@module/kittle-layout.js";
 import "./module/@module/kittle-2dcanvas.js";
 import "./module/@module/kittle-3d.js";
