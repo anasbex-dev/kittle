@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kittle Framework</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="../kittle-1.0.1.css">
-  <script type="module" src="../kittle-1.0.1.js"></script>
+  <link rel="stylesheet" href="../dist/kittle-1.0.1.css">
+  <script type="module" src="../dist/kittle-1.0.1.js"></script>
 </head>
 <body style="--body:19px;">
   
@@ -35,6 +35,23 @@
   <a slot="menu" href="#" class="nav-link">About</a>
   <a slot="menu" href="#" class="nav-link">Contact</a>
 </navbar-kittle>
+
+<kittle-floatingwindow 
+  pd="20px"
+  mg="10px"
+  content-position="center"
+  bg-color="rgba(50,50,50,0.8)"
+  color="white"
+  rounded="10px"
+  blur
+  title-window="Info"
+  bt-close>
+  
+  <p>Halo! Ini floating window yang bisa digeser dengan jari.</p>
+  <button>Oke</button>
+
+</kittle-floatingwindow>
+
 <kittle-guard>
   <h1>Website Terproteksi</h1>
   <p>Ini adalah teks yang tidak bisa diklik, diseleksi, atau dicopy.</p>
@@ -85,6 +102,19 @@
   Ini adalah accordion dengan style gelap.
 </kittle-accordions>
 </kittle-guard>
+
+  <kittle-dropdown 
+  title="Menu"
+  icon="<img src='https://cdn-icons-png.flaticon.com/512/892/892634.png' width='20' height='20'>"
+  auto-close="true"
+  blur>
+  
+  <a href="#">Home</a>
+  <a href="#">Profile</a>
+  <a href="#">Settings</a>
+  <a href="#">Logout</a>
+
+</kittle-dropdown>
 
 <!-- Badge Default -->
 <kittle-badge>New</kittle-badge>

@@ -1,10 +1,13 @@
 {
   "basePath": "https://cdn.jsdelivr.net/gh/anasbex-dev/kittle@1.0.1/",
   "folders": [
-    "components/@components/",
-    "module/@module/"
+    "components/js/",
+    "module/js/"
   ],
   "files": [
+    "kittle-floatingwindow.js",
+    "kittle-content.js",
+    "kittle-footer.js",
     "kittle-tooltip.js",
     "kittle-guard.js",
     "kittle-angker.js",

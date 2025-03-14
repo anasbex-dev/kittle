@@ -4,16 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../kittle-1.0.1.css"/>
-  <script src="../kittle-1.0.1.js" type="module"></script>
+  <link rel="stylesheet" href="../dist/kittle-1.0.1.css"/>
+  <script src="../dist/kittle-1.0.1.js" type="module"></script>
   <title>Kittle Kit Style Css</title>
 </head>
 <style type="text/css" media="all">
+body {
+  padding: 0;
+  margin: 0;
+}
 </style>
 <body>
-  <kittle-navbaremo logo-text="Kittle v1" logo="kittle.png" menu-type="drawer" bg-color="#242424" color="white" rounded="true">
+  
+  <kittle-navbaremo logo-text="Kittle v1" logo="kittle.png" menu-type="drawer" bg-color="#242424" color="white">
   <kittle-accordions 
-  title="Documentation" 
+  title="Kittle Documentation" 
   bg-color="#222" 
   header-bg="#333" 
   header-hover-bg="#444" 
@@ -27,6 +32,7 @@
   <kittle-a href="" fs="17px">Modal</kittle-a>
   <kittle-a href="" fs="17px">Loading</kittle-a>
   <kittle-a href="" fs="17px">Accordions</kittle-a>
+  <kittle-a href="" fs="17px">DropDown</kittle-a>
   <kittle-a href="" fs="17px">Footer</kittle-a>
   <kittle-a href="" fs="17px">Input</kittle-a>
   <kittle-a href="" fs="17px">Shimmer</kittle-a>
@@ -34,6 +40,8 @@
   <kittle-a href="" fs="17px">Card</kittle-a>
   <kittle-a href="" fs="17px">Badge</kittle-a>
   <kittle-a href="" fs="17px">Alert</kittle-a>
+  <kittle-a href="" fs="17px">FloatWindow</kittle-a>
+  <kittle-a href="" fs="17px">ContentLayout</kittle-a>
   
   <h3 style="color: gray;">MODULE</h3>
   <kittle-a href="" fs="17px">Kittle Layout</kittle-a>
@@ -41,6 +49,38 @@
   <kittle-a href="" fs="17px">Kittle Guard</kittle-a>
 </kittle-accordions>
 </kittle-navbaremo>
+
+<kittle-content 
+  position-content="center"
+  pd="20px"
+  mg="auto"
+  rounded="0px"
+  bg-color="rgba(50, 50, 50, 0.7)"
+  color="white">
+  
+<kittle-dropdown 
+  title="Menu"
+  icon="<img src='https://cdn-icons-png.flaticon.com/512/892/892634.png' width='20' height='20'>"
+  auto-close="true"
+  blur
+  index="10000">
+  
+  <a href="#">Home</a>
+  <a href="#">Profile</a>
+  <a href="#">Settings</a>
+  <a href="#">Logout</a>
+
+</kittle-dropdown>
+  
+  <h1>Selamat Datang di Kittle</h1>
+  <p>Ini adalah area konten yang fleksibel.</p>
+  <button>Click Me!</button>
+
+</kittle-content>
+
+<kittle-footer rounded="0px" style="glass" content-position="center" bg-color="rgba(30, 30, 30, 0.8)" color="#fff">
+  &copy; 2025 Kittle | All Rights Reserved.
+</kittle-footer>
 </body>
 
 </html>

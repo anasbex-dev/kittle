@@ -1,0 +1,41 @@
+/* === Copyright ©2025 - AnasBex/Anazu Kittle V1 === */
+
+/* === VARIABEL === */
+@import url('var/kittle.var.css');
+
+/* -- COMPONENTS -- */
+@import url('animation_style.css');
+@import url('components/css/buttons.css');
+@import url('components/css/grid.css');
+@import url('components/css/navbar.css');
+@import url('components/css/modal.css');
+@import url('components/css/alerts.css');
+@import url('components/css/badge.css');
+@import url('components/css/dropdown.css');
+@import url('components/css/table.css');
+@import url('components/css/tooltip.css');
+@import url('components/css/accordion.css');
+@import url('components/css/progress.css');
+@import url('components/css/card.css');
+@import url('components/css/angker.css');
+@import url('components/css/footer.css');
+@import url('components/css/card-social.css');
+@import url('components/css/tablayout.css');
+@import url('components/css/bottomnavigation.css');
+@import url('components/css/switch.css');
+
+/* -- KITTLE MODULE -- */
+@import url('module/kittle.module.css');
+@import url('module/kittle.text.css');
+@import url('module/kittle.img.css');
+
+/* -- KITTLE FONTS -- */
+
+/* -- KITTLE KIT -- */
+@import url('kittle-kit/flex.css');
+@import url('kittle-kit/spacing.css');
+@import url('kittle-kit/colors.css');
+
+/* -- KITTLE THEMES -- */
+@import url('themes/light.css');
+@import url('themes/dark.css');
