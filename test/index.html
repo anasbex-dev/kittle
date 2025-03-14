@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kittle Framework</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="../dist/kittle-1.0.1.css">
-  <script type="module" src="../dist/kittle-1.0.1.js"></script>
+  <link rel="stylesheet" href="../dist/kittle.min.css">
+  <script type="module" src="../dist/kittle.min.js"></script>
 </head>
 <body style="--body:19px;">
   
@@ -35,7 +35,23 @@
   <a slot="menu" href="#" class="nav-link">About</a>
   <a slot="menu" href="#" class="nav-link">Contact</a>
 </navbar-kittle>
-
+<kittle-iframe 
+  src="https://example.com" 
+  mode="default"
+  pd="10px" 
+  mg="5px" 
+  rounded="8px"
+  bg-color="rgba(30, 30, 30, 0.9)"
+  color="#ffffff"
+  blur="true">
+</kittle-iframe>
+<!-- Layout Grid -->
+<kittle-bottomnavigation layout="grid">
+  <kittle-menubottom>📁 Files</kittle-menubottom>
+  <kittle-menubottom>🛠 Tools</kittle-menubottom>
+  <kittle-menubottom>🔧 Settings</kittle-menubottom>
+  <kittle-menubottom>📌 Pin</kittle-menubottom>
+</kittle-bottomnavigation>
 <kittle-floatingwindow 
   pd="20px"
   mg="10px"

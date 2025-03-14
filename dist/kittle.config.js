@@ -12,6 +12,7 @@ class Kittle {
 export default Kittle;
 
 // == COMPONENTS ==
+import "./components/js/kittle-iframe.js";
 import "./components/js/kittle-floatingwindow.js";
 import "./components/js/kittle-content.js";
 import "./components/js/kittle-footer.js";
@@ -32,12 +33,14 @@ import "./components/js/kittle-button.js";
 import "./components/js/kittle-grid.js";
 import "./components/js/kittle-overscroll.js";
 import "./components/js/kittle-bottomnavigation.js";
+import "./components/js/kittle-menubottom.js";
 import "./components/js/kittle-badge.js";
 import "./components/js/kittle-modal.js";
 import "./components/js/kittle-togglemenu.js";
 import "./components/js/kittle-accordions.js";
 
 // == MODULE ==
+import "./module/js/style.config.js";
 import "./module/js/kittle-guard.js";
 import "./module/js/kittle-layout.js";
 import "./module/js/kittle-2dcanvas.js";

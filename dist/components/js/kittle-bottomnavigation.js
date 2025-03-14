@@ -2,129 +2,132 @@ class KittleBottomNavigation extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-  }
-  
-  connectedCallback() {
-    const bgColor = this.getAttribute("bg-color") || "#ffffff";
-    const activeColor = this.getAttribute("active-color") || "#6200ea";
-    const textColor = this.getAttribute("text-color") || "#555";
-    const shadow = this.hasAttribute("shadow") ? "0px -5px 15px rgba(0, 0, 0, 0.1)" : "none";
-    const index = this.getAttribute("index") || "1000"; // z-index default
-    const borderRadius = this.getAttribute("rounded") || "16px";
-    const transitionTime = this.getAttribute("transition-time") || "0.3s";
+
+    // Ambil atribut custom
+    const pd = this.getAttribute("pd") || "10px";
+    const mg = this.getAttribute("mg") || "5px";
+    const bgColor = this.getAttribute("bg-color") || "rgba(30, 30, 30, 0.9)";
+    const color = this.getAttribute("color") || "#ffffff";
+    const rounded = this.getAttribute("rounded") || "15px";
+    const blur = this.hasAttribute("blur") ? "blur(10px)" : "none";
     
-    this.shadowRoot.innerHTML = `
-      <style>
-        :host {
-          position: fixed;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 100%;
-          max-width: 600px;
-          background: ${bgColor};
-          box-shadow: ${shadow};
-          border-radius: ${borderRadius} ${borderRadius} 0 0;
-          z-index: ${index};
-          overflow: hidden;
-          transition: all ${transitionTime} ease-in-out;
-        }
+    // Atribut toggle
+    const toggleText = this.getAttribute("toggle-text") || "☰ Menu";
+    const toggleBg = this.getAttribute("toggle-bg") || "rgba(255, 255, 255, 0.1)";
+    const toggleColor = this.getAttribute("toggle-color") || "#ffffff";
+    const toggleRadius = this.getAttribute("toggle-radius") || "10px";
 
-        .bottom-nav {
-          display: flex;
-          justify-content: space-around;
-          padding: 10px 0;
-          position: relative;
-        }
+    // Atribut layout (row, column, grid)
+    const layout = this.getAttribute("layout") || "row";
 
-        .nav-item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          flex: 1;
-          padding: 10px;
-          cursor: pointer;
-          color: ${textColor};
-          transition: all ${transitionTime} ease-in-out;
-          position: relative;
-        }
+    // CSS Style
+    const style = document.createElement("style");
+    style.textContent = `
+      :host {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: ${mg};
+        z-index: 1000;
+      }
 
-        .nav-item i {
-          font-size: 28px;
-          transition: color ${transitionTime} ease-in-out;
-        }
+      .bottom-nav {
+        position: relative;
+        background: ${bgColor};
+        color: ${color};
+        padding: ${pd};
+        border-radius: ${rounded} ${rounded} 0 0;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+        backdrop-filter: ${blur};
+        text-align: center;
+        overflow: hidden;
+      }
 
-        .nav-item span {
-          font-size: 12px;
-          opacity: 0.8;
-          transition: color ${transitionTime} ease-in-out;
-        }
+      .bottom-toggle {
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        background: ${toggleBg};
+        color: ${toggleColor};
+        border-radius: ${toggleRadius};
+        transition: 0.3s;
+      }
 
-        /* Gaya Android 15: Tambahkan efek pill saat aktif */
-        .nav-item.active {
-          color: ${activeColor} !important;
-        }
+      .bottom-toggle:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
 
-        .nav-item.active i,
-        .nav-item.active span {
-          color: ${activeColor} !important;
-        }
+      .bottom-menu {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        background: ${bgColor};
+        border-radius: ${rounded} ${rounded} 0 0;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+        backdrop-filter: ${blur};
+        overflow: hidden;
+        display: none;  /* 🔥 Benar-benar disembunyikan */
+        flex-direction: ${layout === "column" ? "column" : "row"};
+        flex-wrap: ${layout === "grid" ? "wrap" : "nowrap"};
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
 
-        .nav-item.active::before {
-          content: "";
-          position: absolute;
-          bottom: -5px;
-          width: 60%;
-          height: 6px;
-          background: ${activeColor};
-          border-radius: 10px;
-          transition: all ${transitionTime} ease-in-out;
-        }
-
-        /* Animasi Ripple Effect */
-        .nav-item:active::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.1);
-          border-radius: 50%;
-          animation: ripple 0.4s ease-out;
-        }
-
-        @keyframes ripple {
-          from {
-            transform: scale(0);
-            opacity: 0.6;
-          }
-          to {
-            transform: scale(1.2);
-            opacity: 0;
-          }
-        }
-      </style>
-
-      <div class="bottom-nav">
-        <slot id="nav-slot"></slot>
-      </div>
+      .bottom-menu.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+      }
     `;
-    
-    this.setupNavigation();
-  }
-  
-  setupNavigation() {
-    const slot = this.shadowRoot.querySelector("#nav-slot");
-    
-    slot.addEventListener("slotchange", () => {
-      const navItems = slot.assignedElements();
-      navItems.forEach((item) => {
-        item.classList.add("nav-item"); // Pastikan semua item memiliki class
-        item.addEventListener("click", () => {
-          navItems.forEach((nav) => nav.classList.remove("active"));
-          item.classList.add("active");
-        });
-      });
+
+    // Elemen utama bottom navigation
+    this.wrapper = document.createElement("div");
+    this.wrapper.classList.add("bottom-nav");
+
+    // Tombol toggle
+    this.toggleButton = document.createElement("div");
+    this.toggleButton.classList.add("bottom-toggle");
+    this.toggleButton.textContent = toggleText;
+
+    // Menu bottom
+    this.menu = document.createElement("div");
+    this.menu.classList.add("bottom-menu");
+
+    // Slot untuk menampung `kittle-menubottom`
+    const slot = document.createElement("slot");
+
+    this.menu.appendChild(slot);
+    this.wrapper.append(this.toggleButton, this.menu);
+    this.shadowRoot.append(style, this.wrapper);
+
+    // Event toggle menu
+    this.toggleButton.addEventListener("click", (event) => {
+      if (this.menu.classList.contains("active")) {
+        this.menu.classList.remove("active");
+        setTimeout(() => {
+          this.menu.style.display = "none"; // 🔥 Setelah animasi selesai, benar-benar disembunyikan
+        }, 300);
+      } else {
+        this.menu.style.display = "flex";
+        setTimeout(() => {
+          this.menu.classList.add("active");
+        }, 10);
+      }
+      event.stopPropagation(); // Mencegah klik ini dianggap klik di luar
+    });
+
+    // Klik di luar menu akan menutup menu
+    document.addEventListener("click", (event) => {
+      if (!this.contains(event.target)) {
+        this.menu.classList.remove("active");
+        setTimeout(() => {
+          this.menu.style.display = "none";
+        }, 300);
+      }
     });
   }
 }

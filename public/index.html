@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../dist/kittle-1.0.1.css"/>
-  <script src="../dist/kittle-1.0.1.js" type="module"></script>
+  <link rel="stylesheet" href="../dist/kittle.min.css"/>
+  <script src="../dist/kittle.min.js" type="module"></script>
   <title>Kittle Kit Style Css</title>
 </head>
 <style type="text/css" media="all">
@@ -16,15 +16,17 @@ body {
 </style>
 <body>
   
-  <kittle-navbaremo logo-text="Kittle v1" logo="kittle.png" menu-type="drawer" bg-color="#242424" color="white">
+  <kittle-navbaremo logo-text="Kittle v1" logo="kittle.png" menu-type="drawer" bg-color="white" color="#242424">
   <kittle-accordions 
   title="Kittle Documentation" 
-  bg-color="#222" 
+  bg-color="#222"
+  color="white"
   header-bg="#333" 
   header-hover-bg="#444" 
   border-color="#555" 
-  border-radius="12"
+  rounded="12"
   shadow
+  mg-t="24px"
   auto-close>
   <h3 style="color: gray;">COMPONENTS</h3>
   <kittle-a href="" fs="17px">Navbar</kittle-a>
@@ -42,6 +44,7 @@ body {
   <kittle-a href="" fs="17px">Alert</kittle-a>
   <kittle-a href="" fs="17px">FloatWindow</kittle-a>
   <kittle-a href="" fs="17px">ContentLayout</kittle-a>
+  <kittle-a href="" fs="17px">Iframe</kittle-a>
   
   <h3 style="color: gray;">MODULE</h3>
   <kittle-a href="" fs="17px">Kittle Layout</kittle-a>
@@ -58,19 +61,6 @@ body {
   bg-color="rgba(50, 50, 50, 0.7)"
   color="white">
   
-<kittle-dropdown 
-  title="Menu"
-  icon="<img src='https://cdn-icons-png.flaticon.com/512/892/892634.png' width='20' height='20'>"
-  auto-close="true"
-  blur
-  index="10000">
-  
-  <a href="#">Home</a>
-  <a href="#">Profile</a>
-  <a href="#">Settings</a>
-  <a href="#">Logout</a>
-
-</kittle-dropdown>
   
   <h1>Selamat Datang di Kittle</h1>
   <p>Ini adalah area konten yang fleksibel.</p>
@@ -78,8 +68,12 @@ body {
 
 </kittle-content>
 
-<kittle-footer rounded="0px" style="glass" content-position="center" bg-color="rgba(30, 30, 30, 0.8)" color="#fff">
+<kittle-footer rounded="0px" style="glass" content-position="center" bg-color="#fff" color="#222">
   &copy; 2025 Kittle | All Rights Reserved.
+  <kittle-grid columns="5" gap="10px">
+    <kittle-a>About</kittle-a>
+    <kittle-a>Privacy Policy</kittle-a>
+  </kittle-grid>
 </kittle-footer>
 </body>
 

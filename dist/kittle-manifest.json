@@ -1,10 +1,11 @@
 {
-  "basePath": "https://cdn.jsdelivr.net/gh/anasbex-dev/kittle@latest/dist/",
+  "basePath": "https://cdn.jsdelivr.net/gh/anasbex-dev/kittle@latest",
   "folders": [
-    "components/js/",
-    "module/js/"
+    "/dist/components/js/",
+    "/dist/module/js/"
   ],
   "files": [
+    "kittle-iframe.js",
     "kittle-floatingwindow.js",
     "kittle-content.js",
     "kittle-footer.js",
@@ -19,6 +20,7 @@
     "kittle-switch.js",
     "kittle-togglemenu.js",
     "kittle-bottomnavigation.js",
+    "kittle-menubottom.js",
     "kittle-overscroll.js",
     "kittle-grid.js",
     "kittle-button.js",
@@ -31,6 +33,7 @@
     "kittle-dropdown.js",
     "kittle-navbar.js",
     "kittle-2dcanvas.js",
-    "kittle-3d.js"
+    "kittle-3d.js",
+    "style.config.js"
   ]
 }
