@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kittle Navbar Documentation</title>
+    <script src="../../dist/kittle.min.js" type="module"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background: #eee;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #272822;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .preview {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Kittle Navbar Documentation</h1>
+        <p><strong>Component:</strong> <code>&lt;navbar-kittle&gt;</code></p>
+
+        <h2>🔹 Introduction</h2>
+        <p><code>kittle-navbar</code> is a flexible and customizable navbar component for Kittle UI.</p>
+
+        <h2>Usage Example</h2>
+        <pre>
+&lt;navbar-kittle bg-dark shadow rounded spacing="30px" logo-img="logo.png" logo-size="50px"&gt;
+    &lt;a slot="menu" class="nav-link" href="#"&gt;Home&lt;/a&gt;
+    &lt;a slot="menu" class="nav-link" href="#"&gt;About&lt;/a&gt;
+    &lt;a slot="menu" class="nav-link" href="#"&gt;Contact&lt;/a&gt;
+&lt;/navbar-kittle&gt;
+        </pre>
+
+        <h2>Attributes & Customization</h2>
+        <table border="1" cellspacing="0" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>bg-dark</code></td>
+                    <td>Enables dark mode background.</td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>bg-blur</code></td>
+                    <td>Adds a blur effect to the navbar background.</td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>rounded</code></td>
+                    <td>Makes the navbar corners rounded.</td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>shadow</code></td>
+                    <td>Adds a box-shadow effect.</td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>bg-color</code></td>
+                    <td>Custom background color (e.g., <code>#ff5722</code>).</td>
+                    <td><code>var(--kittle-light-bg)</code></td>
+                </tr>
+                <tr>
+                    <td><code>text-color</code></td>
+                    <td>Custom text color.</td>
+                    <td><code>var(--kittle-dark-text)</code></td>
+                </tr>
+                <tr>
+                    <td><code>spacing</code></td>
+                    <td>Controls the gap between menu items (e.g., <code>30px</code>).</td>
+                    <td><code>20px</code></td>
+                </tr>
+                <tr>
+                    <td><code>logo-img</code></td>
+                    <td>URL of the logo image.</td>
+                    <td><code>None</code></td>
+                </tr>
+                <tr>
+                    <td><code>logo-size</code></td>
+                    <td>Sets the size of the logo image (e.g., <code>50px</code>).</td>
+                    <td><code>40px</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Styling Example</h2>
+        <pre>
+navbar-kittle {
+    --kittle-light-bg: white;
+    --kittle-dark-bg: #333;
+    --kittle-light-text: black;
+    --kittle-dark-text: white;
+}
+        </pre>
+
+        <h2>JavaScript API</h2>
+        <pre>
+const navbar = document.querySelector("navbar-kittle");
+navbar.setAttribute("bg-color", "#007bff");
+navbar.setAttribute("text-color", "#fff");
+        </pre>
+
+        <h2>Features</h2>
+        <ul>
+            <li>✅ Customizable background and text colors</li>
+            <li>✅ Dark mode and blur effects</li>
+            <li>✅ Slot-based menu system</li>
+            <li>✅ Responsive and lightweight</li>
+        </ul>
+
+        <h2>Live Preview</h2>
+        <div class="preview">
+            <navbar-kittle bg-dark shadow rounded spacing="30px" logo-img="#">
+                <a slot="menu" class="nav-link" href="#">Home</a>
+                <a slot="menu" class="nav-link" href="#">About</a>
+                <a slot="menu" class="nav-link" href="#">Contact</a>
+            </navbar-kittle>
+        </div>
+    </div>
+
+</body>
+</html>

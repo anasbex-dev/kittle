@@ -5,6 +5,9 @@
     "/dist/module/js/"
   ],
   "files": [
+    "kittle-radiobutton.js",
+    "kittle-cardsocial.js",
+    "kittle-textarea.js",
     "kittle-iframe.js",
     "kittle-floatingwindow.js",
     "kittle-content.js",

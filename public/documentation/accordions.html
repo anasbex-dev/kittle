@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kittle Accordions Documentation</title>
+<script src="../../dist/kittle.min.js" type="module"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #222;
+        }
+        code {
+            background: #eee;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .example {
+            background: #272822;
+            color: black;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .preview {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>kittle-accordions Documentation</h1>
+    <p><code>&lt;kittle-accordions&gt;</code> is a customizable web component for creating collapsible accordion sections.</p>
+
+    <h2>Usage</h2>
+    <p>Include the component in your HTML:</p>
+    <div class="example">
+        <code>
+            &lt;kittle-accordions title="Click to Open"&gt;
+                &lt;p&gt;This is the content inside the accordion.&lt;/p&gt;
+            &lt;/kittle-accordions&gt;
+        </code>
+    </div>
+
+    <h2>Available Attributes</h2>
+    <table border="1" cellspacing="0" cellpadding="8">
+        <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>title</code></td>
+            <td>String</td>
+            <td>-</td>
+            <td>Sets the accordion header title.</td>
+        </tr>
+        <tr>
+            <td><code>color</code></td>
+            <td>String</td>
+            <td><code>#000</code></td>
+            <td>Text color.</td>
+        </tr>
+        <tr>
+            <td><code>bg-color</code></td>
+            <td>String</td>
+            <td><code>#fff</code></td>
+            <td>Background color of the accordion.</td>
+        </tr>
+        <tr>
+            <td><code>border-color</code></td>
+            <td>String</td>
+            <td><code>#ddd</code></td>
+            <td>Border color of the accordion.</td>
+        </tr>
+        <tr>
+            <td><code>header-bg</code></td>
+            <td>String</td>
+            <td><code>#f1f1f1</code></td>
+            <td>Background color of the header.</td>
+        </tr>
+        <tr>
+            <td><code>header-hover-bg</code></td>
+            <td>String</td>
+            <td><code>#e1e1e1</code></td>
+            <td>Header background color on hover.</td>
+        </tr>
+        <tr>
+            <td><code>rounded</code></td>
+            <td>Number</td>
+            <td><code>8</code></td>
+            <td>Border radius in pixels.</td>
+        </tr>
+        <tr>
+            <td><code>shadow</code></td>
+            <td>Boolean</td>
+            <td><code>false</code></td>
+            <td>Adds a shadow effect if present.</td>
+        </tr>
+        <tr>
+            <td><code>blur</code></td>
+            <td>Boolean</td>
+            <td><code>false</code></td>
+            <td>Applies a blur effect if present.</td>
+        </tr>
+        <tr>
+            <td><code>no-auto-close</code></td>
+            <td>Boolean</td>
+            <td><code>false</code></td>
+            <td>Prevents automatic closing when another accordion is opened.</td>
+        </tr>
+    </table>
+
+    <h2>Examples</h2>
+
+    <h3>Custom Background and Text Color</h3>
+    <div class="example">
+        <code>
+            &lt;kittle-accordions title="Custom Styling" color="white" bg-color="blue"&gt;
+                &lt;p&gt;This accordion has a blue background and white text.&lt;/p&gt;
+            &lt;/kittle-accordions&gt;
+        </code>
+    </div>
+
+    <h3>Accordion with Blur Effect</h3>
+    <div class="example">
+        <code>
+            &lt;kittle-accordions title="Blur Effect" blur&gt;
+                &lt;p&gt;This accordion has a blurred background effect.&lt;/p&gt;
+            &lt;/kittle-accordions&gt;
+        </code>
+    </div>
+
+    <h3>Multiple Accordions with <code>no-auto-close</code></h3>
+    <div class="example">
+        <code>
+            &lt;kittle-accordions title="First Section" no-auto-close&gt;
+                &lt;p&gt;Content of the first accordion.&lt;/p&gt;
+            &lt;/kittle-accordions&gt;
+
+            &lt;kittle-accordions title="Second Section" no-auto-close&gt;
+                &lt;p&gt;Content of the second accordion.&lt;/p&gt;
+            &lt;/kittle-accordions&gt;
+        </code>
+    </div>
+      <h2>Live Preview</h2>
+        <div class="preview">
+<kittle-accordions title="First Section" rounded auto-close> <p>Content of the first accordion.</p> </kittle-accordions> <kittle-accordions title="Second Section" auto-close> <p>Content of the second accordion.</p> </kittle-accordions>
+        </div>
+   </div>
+</div>
+
+</body>
+</html>

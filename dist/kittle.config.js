@@ -12,6 +12,9 @@ class Kittle {
 export default Kittle;
 
 // == COMPONENTS ==
+import "./components/js/kittle-radiobutton.js";
+import "./components/js/kittle-cardsocial.js";
+import "./components/js/kittle-textarea.js";
 import "./components/js/kittle-iframe.js";
 import "./components/js/kittle-floatingwindow.js";
 import "./components/js/kittle-content.js";

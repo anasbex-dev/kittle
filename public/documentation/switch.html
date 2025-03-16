@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kittle Switch Documentation</title>
+    <script src="../../dist/kittle.min.js" type="module"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background: #eee;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #272822;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .preview {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Kittle Switch Documentation</h1>
+        <p><strong>Component:</strong> <code>&lt;kittle-switch&gt;</code></p>
+
+        <h2>🔹 Introduction</h2>
+        <p><code>kittle-switch</code> is a lightweight, customizable switch component.</p>
+
+        <h2>Usage Example</h2>
+        <pre>
+&lt;kittle-switch checked color="#ff5722" size="large" rounded&gt;&lt;/kittle-switch&gt;
+        </pre>
+
+        <h2>Attributes & Customization</h2>
+        <table border="1" cellspacing="0" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>checked</code></td>
+                    <td>Sets the switch to ON state.</td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>color</code></td>
+                    <td>Sets the color of the switch when ON.</td>
+                    <td><code>#007AFF</code></td>
+                </tr>
+                <tr>
+                    <td><code>size</code></td>
+                    <td>Size options: <code>small</code>, <code>medium</code>, <code>large</code>.</td>
+                    <td><code>medium</code></td>
+                </tr>
+                <tr>
+                    <td><code>rounded</code></td>
+                    <td>Applies rounded corners.</td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>disabled</code></td>
+                    <td>Disables the switch interaction.</td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>blur</code></td>
+                    <td>Adds a blur effect to the background.</td>
+                    <td><code>false</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>JavaScript API</h2>
+        <pre>
+const switchElement = document.querySelector("kittle-switch");
+switchElement.addEventListener("change", (event) => {
+    console.log("Switch State:", event.detail);
+});
+        </pre>
+
+        <h2>Features</h2>
+        <ul>
+            <li>✅ Customizable size and color</li>
+            <li>✅ Rounded and blurred effects</li>
+            <li>✅ Emits <code>change</code> event on toggle</li>
+            <li>✅ Supports <code>disabled</code> state</li>
+        </ul>
+
+        <h2>Live Preview</h2>
+        <div class="preview">
+            <kittle-switch checked color="#ff5722" size="large" rounded></kittle-switch>
+        </div>
+    </div>
+
+</body>
+</html>
