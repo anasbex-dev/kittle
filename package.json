@@ -2,7 +2,7 @@
   "name": "kittle",
   "version": "1.0.4",
   "description": "Kit Style Css & Web Components",
-  "main": "src/velox.js",
+  "main": "dist/kittle.min.js",
   "keywords": ["Style Css", "Web Components", "Components", "Web Style"],
   "author": "AnasBex",
   "license": "MIT"
