@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kittle Table Documentation</title>
+    <script src="../../dist/kittle.min.js" type="module"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        pre {
+            background: #222;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .preview {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Kittle Table Documentation</h1>
+        <p>
+            <code>&lt;kittle-table&gt;</code> is a custom web component for creating flexible and stylish tables.
+            It allows you to customize table appearance using attributes and insert dynamic table content inside.
+        </p>
+
+        <h2>Attributes</h2>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>title</code></td>
+                <td>Sets the table title</td>
+                <td><code>title="User List"</code></td>
+            </tr>
+            <tr>
+                <td><code>bg-color</code></td>
+                <td>Changes the table background color</td>
+                <td><code>bg-color="lightgray"</code></td>
+            </tr>
+            <tr>
+                <td><code>header-color</code></td>
+                <td>Changes the table header background color</td>
+                <td><code>header-color="blue"</code></td>
+            </tr>
+            <tr>
+                <td><code>color</code></td>
+                <td>Sets the text color</td>
+                <td><code>color="black"</code></td>
+            </tr>
+            <tr>
+                <td><code>rounded</code></td>
+                <td>Sets table border radius</td>
+                <td><code>rounded="10px"</code></td>
+            </tr>
+            <tr>
+                <td><code>mg</code></td>
+                <td>Sets margin</td>
+                <td><code>mg="10px"</code></td>
+            </tr>
+            <tr>
+                <td><code>pd</code></td>
+                <td>Sets padding</td>
+                <td><code>pd="10px"</code></td>
+            </tr>
+            <tr>
+                <td><code>line</code></td>
+                <td>Sets border thickness between rows</td>
+                <td><code>line="2px"</code></td>
+            </tr>
+            <tr>
+                <td><code>line-color</code></td>
+                <td>Sets border color</td>
+                <td><code>line-color="gray"</code></td>
+            </tr>
+            <tr>
+                <td><code>blur</code></td>
+                <td>Adds a blur effect</td>
+                <td><code>blur="5%"</code></td>
+            </tr>
+            <tr>
+                <td><code>opacity</code></td>
+                <td>Controls table transparency</td>
+                <td><code>opacity="80%"</code></td>
+            </tr>
+        </table>
+
+        <h2>Usage Example</h2>
+        <pre>
+&lt;kittle-table title="User List" bg-color="white" header-color="blue" color="black" rounded="10px"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+            &lt;th&gt;Country&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John Doe&lt;/td&gt;
+            &lt;td&gt;28&lt;/td&gt;
+            &lt;td&gt;USA&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Jane Smith&lt;/td&gt;
+            &lt;td&gt;32&lt;/td&gt;
+            &lt;td&gt;Canada&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/kittle-table&gt;
+        </pre>
+
+        <h2>Live Preview</h2>
+        <div class="preview">
+<kittle-table 
+    title="Example Table"
+    pd="12px"
+    mg="10px"
+    rounded="8"
+    bg-color="white"
+    header-color="#f1f1f1"
+    color="black"
+    title-color="blue"
+    line="2"
+    line-color="#ddd"
+    blur="10"
+    opacity="90"
+>
+    This is the content inside the kittle-table.
+</kittle-table>
+        </div>
+
+    </div>
+
+</body>
+</html>

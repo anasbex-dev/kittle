@@ -2,144 +2,95 @@ class KittleNestedScroll extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-
-    this.scrollFactor = 1;
-    this.autoScroll = false;
-    this.scrollInterval = 2000;
-    this.syncId = null;
-    this.enableDrag = false;
-    this.enableInfinite = false;
-
-    this.render();
-  }
-
-  render() {
+    
     this.shadowRoot.innerHTML = `
       <style>
         :host {
           display: block;
-          overflow: auto;
-          position: relative;
-          max-height: 300px;
-          border: 1px solid #ddd;
-          scroll-behavior: smooth;
-        }
-
-        progress {
-          position: absolute;
-          top: 0;
-          left: 0;
           width: 100%;
-          height: 4px;
-          border: none;
-          appearance: none;
+          max-height: var(--max-height, auto);
+          min-height: 100vh;
+          overflow: hidden;
+          border-radius: var(--rounded, 8px);
+          box-shadow: var(--shadow, 0px 4px 10px rgba(0, 0, 0, 0.1));
+          background: var(--bg-color, white);
+          position: relative;
         }
 
-        progress::-webkit-progress-bar {
-          background: #f3f3f3;
+        .scroll-container {
+          width: 100%;
+          overflow-y: auto;
+          scroll-behavior: smooth;
+          padding: var(--padding, 10px);
+          will-change: transform;
         }
 
-        progress::-webkit-progress-value {
-          background: #00aaff;
+        .bounce {
+          transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
       </style>
-      <slot></slot>
-      <progress max="100" value="0"></progress>
+
+      <div class="scroll-container">
+        <slot></slot>
+      </div>
     `;
-
-    this.container = this;
-    this.progressBar = this.shadowRoot.querySelector("progress");
-
-    this.applyAttributes();
-    this.initScrollFeatures();
+    
+    this.scrollContainer = this.shadowRoot.querySelector(".scroll-container");
+    this.bounceStrength = parseInt(this.getAttribute("bounce-strength")) || 20;
+    this.startY = 0;
+    this.isAtTop = false;
+    this.isAtBottom = false;
   }
-
-  applyAttributes() {
-    this.scrollFactor = parseFloat(this.getAttribute("scroll-factor")) || 1;
-    this.autoScroll = this.getAttribute("auto-scroll") === "true";
-    this.scrollInterval = parseInt(this.getAttribute("scroll-interval")) || 2000;
-    this.syncId = this.getAttribute("sync-id");
-    this.enableDrag = this.getAttribute("drag-scroll") === "true";
-    this.enableInfinite = this.getAttribute("infinite-scroll") === "true";
+  
+  connectedCallback() {
+    this.scrollContainer.addEventListener("touchstart", this.handleTouchStart.bind(this), { passive: true });
+    this.scrollContainer.addEventListener("touchmove", this.handleTouchMove.bind(this), { passive: false });
+    this.scrollContainer.addEventListener("touchend", this.handleTouchEnd.bind(this));
+    this.scrollContainer.addEventListener("wheel", this.handleMouseWheel.bind(this), { passive: false });
   }
-
-  initScrollFeatures() {
-    if (this.container) {
-      // Custom Scroll Speed
-      this.container.addEventListener("wheel", (e) => {
-        e.preventDefault();
-        this.container.scrollTop += e.deltaY * this.scrollFactor;
-      });
-
-      // Scroll Indicator
-      this.container.addEventListener("scroll", () => {
-        let maxScroll = this.container.scrollHeight - this.container.clientHeight;
-        if (maxScroll > 0) {
-          let percent = (this.container.scrollTop / maxScroll) * 100;
-          this.progressBar.value = percent;
-        }
-
-        // Infinite Scroll
-        if (this.enableInfinite && this.container.scrollTop + this.container.clientHeight >= this.container.scrollHeight) {
-          this.container.scrollTop = 0;
-        }
-
-        // Sync Scroll
-        if (this.syncId) {
-          document.querySelectorAll(`nestedscroll[sync-id="${this.syncId}"]`).forEach(el => {
-            if (el !== this.container) el.scrollTop = this.container.scrollTop;
-          });
-        }
-      });
-
-      // Auto-Scroll
-      if (this.autoScroll) {
-        setInterval(() => {
-          if (this.container.scrollTop + this.container.clientHeight < this.container.scrollHeight) {
-            this.container.scrollTop += 10;
-          } else if (this.enableInfinite) {
-            this.container.scrollTop = 0;
-          }
-        }, this.scrollInterval);
-      }
-
-      // Drag-to-Scroll
-      if (this.enableDrag) {
-        let isDown = false, startY, scrollTop;
-        this.container.addEventListener("mousedown", (e) => {
-          isDown = true;
-          startY = e.pageY - this.container.offsetTop;
-          scrollTop = this.container.scrollTop;
-        });
-
-        this.container.addEventListener("mousemove", (e) => {
-          if (!isDown) return;
-          e.preventDefault();
-          const y = e.pageY - this.container.offsetTop;
-          this.container.scrollTop = scrollTop - (y - startY);
-        });
-
-        this.container.addEventListener("mouseup", () => isDown = false);
-        this.container.addEventListener("mouseleave", () => isDown = false);
-      }
+  
+  handleTouchStart(event) {
+    this.startY = event.touches[0].clientY;
+  }
+  
+  handleTouchMove(event) {
+    const currentY = event.touches[0].clientY;
+    const deltaY = currentY - this.startY;
+    
+    if (this.scrollContainer.scrollTop <= 0 && deltaY > 0) {
+      this.isAtTop = true;
+      event.preventDefault();
+      this.scrollContainer.style.transform = `translateY(${Math.min(this.bounceStrength, deltaY)}px)`;
+    } else if (
+      this.scrollContainer.scrollTop + this.scrollContainer.clientHeight >= this.scrollContainer.scrollHeight &&
+      deltaY < 0
+    ) {
+      this.isAtBottom = true;
+      event.preventDefault();
+      this.scrollContainer.style.transform = `translateY(${Math.max(-this.bounceStrength, deltaY)}px)`;
     }
   }
-
-  connectedCallback() {
-    this.applyAttributes();
-    this.initScrollFeatures();
+  
+  handleTouchEnd() {
+    if (this.isAtTop || this.isAtBottom) {
+      this.scrollContainer.classList.add("bounce");
+      this.scrollContainer.style.transform = "translateY(0)";
+      setTimeout(() => this.scrollContainer.classList.remove("bounce"), 300);
+    }
+    this.isAtTop = false;
+    this.isAtBottom = false;
   }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    this.applyAttributes();
-    this.initScrollFeatures();
-  }
-
-  static get observedAttributes() {
-    return ["scroll-factor", "auto-scroll", "scroll-interval", "sync-id", "drag-scroll", "infinite-scroll"];
+  
+  handleMouseWheel(event) {
+    const { deltaY } = event;
+    if (
+      (this.scrollContainer.scrollTop <= 0 && deltaY < 0) ||
+      (this.scrollContainer.scrollTop + this.scrollContainer.clientHeight >= this.scrollContainer.scrollHeight &&
+        deltaY > 0)
+    ) {
+      event.preventDefault();
+    }
   }
 }
 
-if (!customElements.get("kittle-nestedscroll")) {
-  customElements.define("kittle-nestedscroll", KittleNestedScroll);
-}
+customElements.define("kittle-nestedscroll", KittleNestedScroll);

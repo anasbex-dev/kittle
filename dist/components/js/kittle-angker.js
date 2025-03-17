@@ -6,13 +6,14 @@ class KittleAngker extends HTMLElement {
   }
 
   render() {
+    const bgcolor = this.getAttribute("bg-color") || "inherit";
     const href = this.getAttribute("href") || "#";
-    const clr = this.getAttribute("clr") || "inherit"; // Warna teks
-    const fs = this.getAttribute("fs") || "inherit"; // Ukuran font
-    const pd = this.getAttribute("pd") || "8"; // Padding
-    const mg = this.getAttribute("mg") || "0"; // Margin
-    const fw = this.getAttribute("fw") || "normal"; // Ketebalan font
-    const styleAttr = this.getAttribute("style") || ""; // Atribut tambahan untuk gaya bebas
+    const clr = this.getAttribute("color") || "inherit";
+    const fs = this.getAttribute("f-sz") || "inherit";
+    const pd = this.getAttribute("pd") || "8";
+    const mg = this.getAttribute("mg") || "0";
+    const fw = this.getAttribute("fw") || "normal";
+    const styleAttr = this.getAttribute("style") || "";
     
     this.shadowRoot.innerHTML = `
       <style>
@@ -21,6 +22,7 @@ class KittleAngker extends HTMLElement {
         }
 
         a {
+          background-color: ${bgcolor};
           text-decoration: none;
           color: ${clr};
           font-size: ${fs};
@@ -42,7 +44,7 @@ class KittleAngker extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ["href", "clr", "fs", "pd", "mg", "fw", "style"];
+    return ["bg-color","href", "color", "f-sz", "pd", "mg", "fw", "style"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {

@@ -1,0 +1,9 @@
+{
+  "name": "kittle",
+  "version": "1.0.4",
+  "description": "Kit Style Css & Web Components",
+  "main": "src/velox.js",
+  "keywords": ["Style Css", "Web Components", "Components", "Web Style"],
+  "author": "AnasBex",
+  "license": "MIT"
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KittleP Documentation</title>
+<script src="../../dist/kittle.min.js" type="module"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .code {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        .live-preview {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>KittleP Documentation</h1>
+        <p><strong>KittleP</strong> is a custom web component for stylized paragraph elements.</p>
+
+        <h2>Available Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>f-sz</code></td>
+                    <td>Sets the font size (e.g., px, em, small).</td>
+                    <td><code>f-sz="18px"</code></td>
+                </tr>
+                <tr>
+                    <td><code>color</code></td>
+                    <td>Sets the text color.</td>
+                    <td><code>color="red"</code></td>
+                </tr>
+                <tr>
+                    <td><code>bg-color</code></td>
+                    <td>Sets the background color.</td>
+                    <td><code>bg-color="lightgray"</code></td>
+                </tr>
+                <tr>
+                    <td><code>rounded</code></td>
+                    <td>Applies border-radius for rounded corners.</td>
+                    <td><code>rounded="8px"</code></td>
+                </tr>
+                <tr>
+                    <td><code>pd</code></td>
+                    <td>Sets padding inside the paragraph.</td>
+                    <td><code>pd="10px"</code></td>
+                </tr>
+                <tr>
+                    <td><code>mg</code></td>
+                    <td>Sets margin outside the paragraph.</td>
+                    <td><code>mg="10px"</code></td>
+                </tr>
+                <tr>
+                    <td><code>content-position</code></td>
+                    <td>Aligns text within the paragraph (left, center, right).</td>
+                    <td><code>content-position="center"</code></td>
+                </tr>
+                <tr>
+                    <td><code>display</code></td>
+                    <td>Defines the display type (block, inline-block, etc.).</td>
+                    <td><code>display="block"</code></td>
+                </tr>
+                <tr>
+                    <td><code>type</code></td>
+                    <td>Defines a special paragraph type (e.g., quotes).</td>
+                    <td><code>type="quotes"</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Usage Example</h2>
+        <p>Include the <code>kittle.min.js</code> script and use the component:</p>
+        <div class="code">
+            &lt;kittle-p f-sz="18px" color="blue" bg-color="lightgray" rounded="8px" pd="10px" mg="10px"&gt;  
+            This is a custom paragraph.  
+            &lt;/kittle-p&gt;  
+            
+            &lt;kittle-p type="quotes" color="green" f-sz="20px"&gt;  
+            "This is a quote styled paragraph."  
+            &lt;/kittle-p&gt;
+        </div>
+
+        <h2>Live Preview</h2>
+        <div class="live-preview">
+            <kittle-p f-sz="18px" color="blue" bg-color="lightgray" rounded="8px" pd="10px" mg="10px">
+                This is a custom paragraph.
+            </kittle-p>
+
+            <kittle-p type="quotes" color="green" f-sz="20px">
+                "This is a quote styled paragraph."
+            </kittle-p>
+        </div>
+
+    </div>
+
+</body>
+</html>
