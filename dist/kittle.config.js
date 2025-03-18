@@ -1,5 +1,4 @@
-//***** AnasBex/Anazu copyright 2025 *****
-
+// ***** AnasBex/Anazu copyright 2025 *****
 // === DO NOT EDIT THIS SECTION IT HIGHLY AFFECTS KITTLE HTML ATTRIBUTES! ===
 
 // Kittle Core
@@ -12,41 +11,71 @@ class Kittle {
 export default Kittle;
 
 // == COMPONENTS ==
-import "./components/js/kittle-table.js";
-import "./components/js/kittle-p.js";
-import "./components/js/kittle-radiobutton.js";
-import "./components/js/kittle-cardsocial.js";
-import "./components/js/kittle-textarea.js";
-import "./components/js/kittle-iframe.js";
-import "./components/js/kittle-floatingwindow.js";
-import "./components/js/kittle-content.js";
-import "./components/js/kittle-footer.js";
-import "./components/js/kittle-tooltip.js";
-import "./components/js/kittle-angker.js";
-import "./components/js/kittle-navbaremo.js";
-import "./components/js/kittle-input.js";
-import "./components/js/kittle-animation.js";
-import "./components/js/kittle-shimmer.js";
-//import "./components/js/kittle-nestedscroll.js";
-import "./components/js/kittle-loading.js";
-import "./components/js/kittle-switch.js";
-import "./components/js/kittle-alert.js";
-import "./components/js/kittle-dropdown.js";
-import "./components/js/kittle-navbar.js";
-import "./components/js/kittle-card.js";
-import "./components/js/kittle-button.js";
-import "./components/js/kittle-grid.js";
-import "./components/js/kittle-overscroll.js";
-import "./components/js/kittle-bottomnavigation.js";
-import "./components/js/kittle-menubottom.js";
-import "./components/js/kittle-badge.js";
-import "./components/js/kittle-modal.js";
-import "./components/js/kittle-togglemenu.js";
-import "./components/js/kittle-accordions.js";
+const components = [
+  "kittle-switchv1",
+  "kittle-img",
+  "kittle-textview",
+  "kittle-table",
+  "kittle-p",
+  "kittle-radiobutton",
+  "kittle-cardsocial",
+  "kittle-textarea",
+  "kittle-iframe",
+  "kittle-floatingwindow",
+  "kittle-content",
+  "kittle-footer",
+  "kittle-tooltip",
+  "kittle-angker",
+  "kittle-navbaremo",
+  "kittle-input",
+  "kittle-animation",
+  "kittle-shimmer",
+  "kittle-loading",
+  "kittle-switch",
+  "kittle-alert",
+  "kittle-dropdown",
+  "kittle-navbar",
+  "kittle-card",
+  "kittle-button",
+  "kittle-grid",
+  "kittle-overscroll",
+  "kittle-bottomnavigation",
+  "kittle-menubottom",
+  "kittle-badge",
+  "kittle-modal",
+  "kittle-togglemenu",
+  "kittle-accordions",
+];
 
-// == MODULE ==
-import "./module/js/style.config.js";
-import "./module/js/kittle-guard.js";
-import "./module/js/kittle-layout.js";
-import "./module/js/kittle-2dcanvas.js";
-import "./module/js/kittle-3d.js";
+// == MODULES ==
+const modules = [
+  "kittle.anim.js",
+  "style.config",
+  "kittle-guard",
+  "kittle-layout",
+  "kittle-2dcanvas",
+  "kittle-3d",
+];
+
+// Fungsi untuk mengimpor komponen secara dinamis
+async function loadComponents() {
+  const promises = components.map(component => 
+    import(`./components/js/${component}.js`)
+  );
+  await Promise.all(promises);
+  console.log("✅ Semua komponen Kittle berhasil dimuat!");
+}
+
+// Fungsi untuk mengimpor modul secara dinamis
+async function loadModules() {
+  const promises = modules.map(module => 
+    import(`./module/js/${module}.js`)
+  );
+  await Promise.all(promises);
+  console.log("✅ Semua modul Kittle berhasil dimuat!");
+}
+
+// Mulai memuat semua komponen dan modul
+(async () => {
+  await Promise.all([loadComponents(), loadModules()]);
+})();

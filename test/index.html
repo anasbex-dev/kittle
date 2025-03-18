@@ -6,7 +6,7 @@
   <title>Kittle Framework</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="../dist/kittle.min.css">
-  <script type="module" src="../dist/kittle.min.js"></script>
+  <script src="../dist/kittle.min.js"></script>
 </head>
 <body style="--body:19px;">
   
@@ -35,6 +35,32 @@
   <a slot="menu" href="#" class="nav-link">About</a>
   <a slot="menu" href="#" class="nav-link">Contact</a>
 </navbar-kittle>
+
+  <kittle-switchv1 id="switch1"
+    value="false"
+    icon="kittle.png"
+    w="60px" h="30px"
+    i-w="25px" i-h="25px"
+    bg-off="#888"
+    bg-active="#00ff99"
+    rounded="rounded">
+  </kittle-switchv1>
+
+  <br>
+
+  <button onclick="checkValue()">Cek Value</button>
+
+  <script>
+    function checkValue() {
+      let switchComponent = document.getElementById("switch1");
+      alert("Nilai switch: " + switchComponent.getValue());
+    }
+
+    // Event Listener ketika switch berubah
+    document.getElementById("switch1").addEventListener("change", (e) => {
+      console.log("Switch Value:", e.detail);
+    });
+  </script>
 
 <kittle-iframe 
   src="https://example.com" 

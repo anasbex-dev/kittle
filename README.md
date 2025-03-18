@@ -25,7 +25,7 @@ Tambahkan kode berikut ke dalam file **HTML** kamu:
 <!-- Kittle CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/anasbex-dev/kittle@1.1.0/kittle-1.1.0.css">  
 <!-- Kittle JS -->
-<script src="https://cdn.jsdelivr.net/gh/anasbex-dev/kittle@1.1.0/kittle-1.1.0.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/gh/anasbex-dev/kittle@1.1.0/kittle-1.1.0.js"></script>
 ```  
 
 ### **2️⃣ Menggunakan NPM**  
@@ -38,11 +38,11 @@ npm install kittle
 Lalu **import** ke dalam proyek kamu:  
 
 ```css  
-@import 'kittle/kittle-1.1.0.css';  
+@import 'kittle/dist/kittle.min.css';  
 ```  
 
 ```js
-import 'kittle/kittle-1.1.0.js';  
+import 'kittle/dist/kittle.min.js';  
 ```
 
 ---

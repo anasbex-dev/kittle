@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KittleAnimation Documentation</title>
+  <script src="../../dist/module/js/kittle.anim.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    code {
+      background: #eee;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+    .example-box {
+      width: 100px;
+      height: 100px;
+      background: royalblue;
+      display: inline-block;
+      margin: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 10px 0;
+      cursor: pointer;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Kittle Animation V1 Documentation</h1>
+  <p><strong>KittleAnim</strong> adalah library animasi berbasis JavaScript yang memudahkan pembuatan animasi elemen HTML.</p>
+
+  <h2>📌 Cara Penggunaan</h2>
+  <p>Tambahkan kittle.min.js ke proyek Anda dan panggil metode yang tersedia.</p>
+
+  <pre><code>const anim = KittleAnim("#element").to({ transform: "translateX(100px)" }, 1000);</code></pre>
+
+  <h2>🛠 Metode & Parameter</h2>
+
+  <h3>1️⃣ <code>to(properties, duration, easing, delay, onComplete)</code></h3>
+  <p>Menjalankan animasi dari kondisi sekarang ke kondisi yang ditentukan.</p>
+  <ul>
+    <li><strong>properties</strong>: Object CSS yang akan dianimasikan</li>
+    <li><strong>duration</strong>: Durasi animasi (ms)</li>
+    <li><strong>easing</strong>: Jenis easing ("linear", "ease-in", "ease-out", dsb.)</li>
+    <li><strong>delay</strong>: Delay sebelum animasi dimulai (ms)</li>
+    <li><strong>onComplete</strong>: Callback setelah animasi selesai</li>
+  </ul>
+
+  <h4>🔹 Contoh</h4>
+  <button onclick="KittleAnim('#box1').to({ transform: 'translateX(200px)' }, 1000, 'ease-in-out')">Jalankan</button>
+  <div id="box1" class="example-box"></div>
+
+  <hr>
+
+  <h3>2️⃣ <code>from(properties, duration, easing, delay)</code></h3>
+  <p>Menjalankan animasi dari kondisi awal yang ditentukan ke kondisi default elemen.</p>
+
+  <h4>🔹 Contoh</h4>
+  <button onclick="KittleAnim('#box2').from({ opacity: 0, transform: 'scale(0.5)' }, 1000)">Jalankan</button>
+  <div id="box2" class="example-box"></div>
+
+  <hr>
+
+  <h3>3️⃣ <code>fromTo(fromProps, toProps, duration, easing, delay)</code></h3>
+  <p>Menjalankan animasi dari kondisi awal ke kondisi akhir.</p>
+
+  <h4>🔹 Contoh</h4>
+  <button onclick="KittleAnim('#box3').fromTo({ opacity: 0 }, { opacity: 1, transform: 'rotate(180deg)' }, 1000)">Jalankan</button>
+  <div id="box3" class="example-box"></div>
+
+  <hr>
+
+  <h3>4️⃣ <code>bezier(properties, duration, bezier, delay)</code></h3>
+  <p>Animasi dengan custom cubic-bezier easing.</p>
+
+  <h4>🔹 Contoh</h4>
+  <button onclick="KittleAnim('#box4').bezier({ transform: 'translateY(100px)' }, 1500, [0.17, 0.67, 0.83, 0.67])">Jalankan</button>
+  <div id="box4" class="example-box"></div>
+
+  <hr>
+
+  <h3>5️⃣ <code>spring(properties, stiffness, damping)</code></h3>
+  <p>Animasi dengan efek pegas.</p>
+
+  <h4>🔹 Contoh</h4>
+  <button onclick="KittleAnim('#box5').spring({ transform: 'translateX(200px)' }, 80, 15)">Jalankan</button>
+  <div id="box5" class="example-box"></div>
+
+  <hr>
+
+  <h3>6️⃣ <code>path(pathString, duration, easing)</code></h3>
+  <p>Animasi mengikuti path SVG.</p>
+
+  <h4>🔹 Contoh</h4>
+  <button onclick="KittleAnim('#box6').path('M0,0 Q100,200 200,0 T400,0', 4000, 'ease-in-out')">Jalankan</button>
+  <div id="box6" class="example-box"></div>
+
+  <hr>
+
+  <h3>7️⃣ <code>pause()</code> & <code>resume()</code></h3>
+  <p>Pause dan lanjutkan animasi.</p>
+
+  <h4>🔹 Contoh</h4>
+  <button onclick="animInstance.pause()">Pause</button>
+  <button onclick="animInstance.resume()">Resume</button>
+  <div id="box7" class="example-box"></div>
+
+</div>
+
+<script>
+  let animInstance = new KittleAnim("#box8").to({ transform: "translateX(300px)" }, 2000, "ease-in-out");
+</script>
+
+</body>
+</html>

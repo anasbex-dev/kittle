@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../dist/kittle.min.css"/>
-  <script src="../dist/kittle.min.js" type="module"></script>
+  <script src="../dist/kittle.min.js"></script>
   <title>Kittle Kit Style Css</title>
 </head>
 <style type="text/css" media="all">
@@ -46,6 +46,7 @@ body {
   <kittle-a href="" fs="17px">ContentLayout</kittle-a>
   <kittle-a href="" fs="17px">Iframe</kittle-a>
   <kittle-a href="" fs="17px">TextArea</kittle-a>
+  <kittle-a href="" fs="17px">TextView</kittle-a>
   <kittle-a href="" fs="17px">RadioButton</kittle-a>
   
   <h3 style="color: gray;">MODULE</h3>
@@ -57,13 +58,39 @@ body {
 
 <kittle-content 
   position-content="center"
-  pd="20px"
-  mg="auto"
+  pd="30px"
+  mg="0"
   rounded="0px"
   bg-color="rgba(50, 50, 50, 0.7)"
   color="white">
   
+  <kittle-switchv1 id="switch1"
+    value="false"
+    icon="kittle.png"
+    w="80px" h="30px"
+    i-w="32px" i-h="32px"
+    bg-off="#888"
+    bg-active="pink"
+    rounded="rounded"
+    line="1px"
+    line-color="white">
+  </kittle-switchv1>
 
+  <br>
+
+  <button onclick="checkValue()">Cek Value</button>
+
+  <script>
+    function checkValue() {
+      let switchComponent = document.getElementById("switch1");
+      alert("Nilai switch: " + switchComponent.getValue());
+    }
+
+    // Event Listener ketika switch berubah
+    document.getElementById("switch1").addEventListener("change", (e) => {
+      console.log("Switch Value:", e.detail);
+    });
+  </script>
 
 </kittle-content>
 
